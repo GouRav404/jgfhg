@@ -1,0 +1,1082 @@
+/* ========== ✅ GENERAL STYLES ========== */
+.navbar {
+  background-color: white !important;
+  padding: 10px 0;
+  transition: background-color 0.8s ease;
+}
+
+.navbar-brand img {
+  max-height: 90px;
+}
+
+/* Desktop nav links */
+.navbar .nav-link {
+  color: black !important;
+  padding: 10px 15px;
+  margin: 0 12px;
+  position: relative;
+  font-weight: 500;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 5px;
+  height: 2px;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  opacity: 1;
+  left: 10%;
+  right: 10%;
+}
+
+/* Brochure Button General */
+.brochure-btn {
+  font-size: 1rem;
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  margin-left: 30px;
+  margin-top: 5px;
+  position: relative;
+  top: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.brochure-btn:hover {
+  background-color: blue;
+  color: #000 !important;
+  text-decoration: none;
+}
+
+/* ========== ✅ MOBILE NAVIGATION ========== */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: -10px;
+    right: 0!important;               /* ✅ Fix: Anchor to right side */
+    left: auto!important;             /* ✅ Cancel left alignment */
+  
+    width: 75%;
+    max-width: 280px;
+    height: 110vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 20px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    border-radius: 0;
+    transform: translateX(100%);   /* Start off-screen to right */
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+ .navbar-collapse.show {
+    transform: translateX(0);      /* ✅ Slide in from right */
+  }
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    background: transparent !important;
+    width: 100%;
+  }
+
+  .navbar-collapse .nav-item {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white !important;
+    background: transparent;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-collapse .nav-link:hover {
+    color: #00e6e6 !important;
+  }
+
+  .navbar-collapse .brochure-btn {
+    width: 90%;
+    max-width: 240px;
+    margin: 20px 10px 80px;
+    background-color: #17a2b8;
+    color: black;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	position: relative;
+        top: -90px;
+  }
+
+  .navbar-collapse .brochure-btn:hover {
+    background-color: #00e6e6;
+    color: black !important;
+  }
+
+  .mobile-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
+    display: block;
+  }
+
+  .mobile-close-btn .close-nav {
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .navbar-toggler {
+    z-index: 1101;
+  }
+
+  .navbar-collapse.show ~ .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-toggler.collapsed {
+    display: block;
+  }
+
+  .navbar-toggler:not(.collapsed) {
+    display: none;
+  }
+}
+
+/* ✖ Hide close button on desktop */
+@media (min-width: 992px) {
+  .mobile-close-btn {
+    display: none;
+  }
+}
+
+/* Slide animation */
+@keyframes slideDownDark {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Counter Section Styling */
+.counter_wrap {
+  background-color: #111;
+  padding: 60px 0;
+}
+
+.box_counter {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.box_counter:hover {
+  transform: translateY(-10px);
+  background: #000;
+  border-color: #555;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.box_counter i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.box_counter:hover i {
+  color: #00ffcc;
+}
+
+.counter_text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.box_counter p {
+  color: #bbb;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.contact_info li {
+  margin-bottom: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.contact_info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact_info a:hover {
+  text-decoration: underline;
+}
+.brand-logos-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.portfolio-img:hover {
+  transform: scale(1.02);
+}
+.brand-logos-wrapper img:hover {
+  transform: scale(1.03);
+}
+.brand-logos-wrapper img:hover {
+  box-shadow: 0 0 15px rgba(255, 94, 87, 0.5);
+}
+
+/* Icon circle centered */
+.box_icon {
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box_icon i {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Card style */
+.icon_box {
+  min-height: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon_box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Zigzag effect */
+.card-zigzag:nth-child(even) {
+  margin-top: 30px;
+}
+.card-zigzag:nth-child(odd) {
+  margin-bottom: 30px;
+}
+
+/* Title & paragraph styling */
+.icon_box h6 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin-top: 10px;
+}
+.icon_box p {
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Animate on scroll fade-up & fade-down */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+[data-aos="fade-down"] {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.6s ease;
+}
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+section.why-choose {
+  background: linear-gradient(135deg, #f7f9fc, #eef3f8);
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.icon_box {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  height: 100%;
+}
+
+.top-border {
+  border-top: 4px solid #007bff;
+  padding-top:8.5px;
+}
+
+.bottom-border {
+  border-bottom: 4px solid #007bff;
+}
+
+/* Common for zigzag margin */
+.card-zigzag {
+  margin-top: 0px;
+  position: relative;  /* important for absolute borders */
+}
+
+/* Top border: slightly above the card */
+
+
+
+
+/* Optional: thoda shadow & smoothness */
+.icon_box {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background: white;
+}
+
+.portfolio_section {
+  overflow: hidden;
+  padding: 60px 0;
+  background: #f9f9f9; /* subtle background for contrast */
+}
+
+/* 💎 Grid Styling */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 140px;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+/* 📐 Grid Item Sizes */
+.collage-grid .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.collage-grid .wide {
+  grid-column: span 2;
+}
+
+.collage-grid .tall {
+  grid-row: span 2;
+}
+
+/* 📸 Image Styles */
+.collage-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* enhanced depth */
+  transition: transform 0.35s ease, box-shadow 0.3s ease;
+}
+
+.collage-grid img:hover {
+  transform: scale(1.08); /* stronger zoom */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.collage-grid .grid-item {
+  position: relative;
+}
+
+/* All images get a subtle inner border */
+.collage-grid .grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid transparent; /* initial */
+}
+
+/* Top border except top-row boxes */
+.collage-grid .grid-item:nth-child(n+3) img {
+  border-top: 2px solid #e0e0e0;
+}
+
+/* Left border except first in each row */
+.collage-grid .grid-item:not(:nth-child(4n+1)) img {
+  border-left: 2px solid #e0e0e0;
+}
+
+/* Hover zoom */
+.collage-grid img:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+
+/* 📝 Text Section Styling */
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: #222; 
+}
+
+
+.text-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.text-section p.lead {
+  font-size: 1.1rem;
+  color: #444;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.text-section p.small {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* 🖱️ Button Styling */
+.btn-dark {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  background-color:#00adef;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #32346d;
+  color:white !important;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 767px) {
+  .row.align-items-center {
+    flex-direction: column;
+  }
+
+  .text-section {
+    padding: 20px 0;
+  }
+
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+}
+
+.box_icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff; /* Blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.box_icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #0056b3; /* Darker blue on hover */
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.box_icon:hover::before {
+  left: 0;
+}
+
+.box_icon i {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.box_icon:hover i {
+  transform: translateX(3px); /* small slide of the icon too (optional) */
+}
+
+.svg-leaf {
+  position: absolute;
+  top: -40px;         /* adjust to your liking */
+  right: -20px;       /* adjust to position it closer/farther */
+  width: 80px;        /* scale as needed */
+  opacity: 0.4;       /* subtle effect */
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.svg-leaf-left {
+  position: absolute;
+  top: -30px;     /* adjust vertically */
+  left: -30px;    /* adjust horizontally */
+  width: 80px;    /* size of the SVG */
+  opacity: 0.5;   /* optional: make it subtle */
+  z-index: 0; 
+  /* behind content */
+  
+  pointer-events: none;
+}
+
+.why-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.why-box:hover {
+  transform: translateY(-5px);
+}
+
+.why-icon i {
+  font-size: 2rem;
+  color: #007bff; /* Customize icon color */
+}
+
+.why-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.why-box p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #555;
+}
+
+/* Two per row on mobile */
+@media (max-width: 575.98px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .why-icon i {
+    font-size: 1.6rem;
+  }
+
+  .why-box h4 {
+    font-size: 1rem;
+  }
+
+  .why-box p {
+    font-size: 0.75rem;
+  }
+}
+
+
+@@media (max-width: 575.98px) {
+  .why-choose-us .col-sm-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+  }
+
+  .icon_box {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon_box i {
+    font-size: 1.6rem;
+  }
+
+  .icon_box_content h6 {
+    font-size: 1rem;
+  }
+
+  .icon_box_content p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  flex: 0 0 16%; /* ~6 cards per row on large screen */
+  max-width: 16%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* On small screens, show 2 cards per row */
+@media (max-width: 576px) {
+  .card {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+/* ✅ Desktop: original collage layout */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  gap: 10px;
+}
+
+.collage-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Use your special spans on desktop */
+.collage-grid .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.collage-grid .wide {
+  grid-column: span 2;
+}
+
+.collage-grid .tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.collage-grid .small {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* ✅ Mobile: simple 2-column grid */
+@media (max-width: 768px) {
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px; /* adjust height to your taste */
+  }
+
+  /* Remove the special spans so it becomes a clean grid */
+  .collage-grid .big,
+  .collage-grid .wide,
+  .collage-grid .tall,
+  .collage-grid .small {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio_section h2 {
+    font-size: 22px;  /* smaller heading */
+  }
+
+  .portfolio_section .lead {
+    font-size: 14px;  /* smaller main text */
+  }
+
+  .portfolio_section .small {
+    font-size: 12px;  /* smaller muted text */
+  }
+
+  #loadMoreBtn {
+    font-size: 14px;    /* smaller button text */
+    padding: 8px 16px;  /* less height & width */
+  }
+
+  .portfolio_section {
+    padding: 20px 10px; /* reduce section padding */
+  }
+}
+
+.footer_dark .widget_title {
+  color: #17a2b8; /* bright blue, you can replace with your preferred shade */
+}
+
+/* ✅ Desktop adjustments for small desktop screens */
+@media (max-width: 1200px) and (min-width: 992px) {
+  .navbar .nav-link {
+    margin: 0 8px;   /* smaller gaps */
+    font-size: 0.9rem; /* slightly smaller text */
+  }
+
+  .brochure-btn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-left: 10px;
+  }
+
+  .navbar-brand img {
+    max-height: 50px; /* smaller logo */
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 992px) {
+  .navbar .nav-link {
+    margin: 0 6px;
+    font-size: 0.85rem;
+  }
+
+  .brochure-btn {
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    margin-left: 8px;
+  }
+
+  .navbar-brand img {
+    max-height: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .counter_wrap .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .counter_wrap .row > div {
+    flex: 0 0 48%;            /* two per row with gap */
+    max-width: 48%;
+    margin-bottom: 10px;
+  }
+
+  .counter_wrap .box_counter {
+    height: 130px;            /* fixed same height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .counter_wrap .box_counter i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  .counter_wrap .box_counter .counter_text {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .counter_wrap .box_counter p {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-height: 70px;     /* slightly bigger than 40px */
+  }
+
+  .navbar-toggler {
+    font-size: 1.4rem;    /* slightly bigger toggle icon */
+    padding: 6px -90px;
+  }
+
+  .navbar {
+    padding: 10px 0;       /* balanced vertical space */
+  }
+}
+
+@media (max-width: 575.98px) {
+  .why-choose-us .col-sm-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 8px; /* slightly smaller padding */
+  }
+
+  .icon_box {
+    min-height: 180px; /* reduce height */
+    padding: 12px;     /* less padding inside */
+  }
+
+  .icon_box i {
+    font-size: 1.4rem; /* smaller icon */
+  }
+
+  .icon_box_content h6 {
+    font-size: 0.9rem; /* slightly smaller heading */
+    margin-top: 4px;
+  }
+
+  .icon_box_content p {
+    font-size: 0.75rem; /* smaller text */
+    text-align: center;
+    margin-top: 2px;
+  }
+}
+
+.banner_section {
+  height: 80vh; /* smaller height, adjust as needed */
+}
+
+.banner_section .carousel-item {
+  height: 80vh; /* match with parent */
+  background-size: cover;
+  background-position: center;
+}
+/* Hide mobile slider by default */
+.mobile_banner_section {
+  display: none;
+}
+
+/* On mobile: show mobile slider & hide desktop carousel */
+@media (max-width: 991.98px) {
+  .banner_section {
+	  display: none;
+margin-top: -30px !important;
+  }
+
+  .mobile_banner_section { display: block;
+margin-top: -30px !important;  }
+  
+}
+
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 4px 0 !important;           /* less vertical space */
+  }
+
+  .navbar-brand img {
+    max-height: 60px !important;        /* smaller logo height */
+  }
+
+  .navbar-toggler {
+    font-size: 1.2rem;                  /* smaller hamburger icon */
+    padding: 4px 6px;
+  }
+}
+
+/* Desktop: perfect size & spacing for large screens 
+@media (min-width: 1200px) {
+  .brochure-btn {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    margin-left: 20px;
+  }
+}
+
+/* Medium desktop: slightly smaller 
+@media (max-width: 1199px) and (min-width: 992px) {
+  .brochure-btn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-left: 12px;
+  }
+}
+
+/* Small desktop & tablet 
+@media (max-width: 991px) and (min-width: 768px) {
+  .brochure-btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    margin-left: 8px;
+  }
+}
+
+/* Mobile already has separate styling in your code, so no need to touch it */
+
+
+@media (max-width: 767px) {
+  .banner_section {
+    height: -0vh !important; /* reduce height to 40% of viewport */
+  }
+
+  .banner_section .carousel-item,
+  .banner_section .banner_slide_content {
+    height: 100% !important;
+  }
+
+  .banner_section .background_bg {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile_banner_section .carousel-item img {
+    height: 100vw !important;   /* or adjust like 180px, 220px as per your taste */
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner_section,
+  .mobile_banner_section {
+    margin-top: -30px!important;  /* adjust according to navbar + top header height */
+  }
+}
+
+@media (max-width: 767px) {
+  .top-header {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0px!important;        /* kam padding */
+  }
+  .navbar-brand img {
+    max-height: 70px !important;     /* chhota logo */
+  }
+@media (max-width: 991.98px) {
+  .navbar .d-flex .btn,
+  .navbar .d-flex .navbar-toggler {
+    margin: 4px !important;
+  }
+}
+
+/* By default, hide mobile banner */
+.mobile-banner {
+  display: none;
+}
+
+/* Show desktop banner only on large screens (e.g., width ≥ 992px) */
+@media (min-width: 992px) {
+  .banner_section  {
+    display: block;
+  }
+  .mobile_banner_section {
+    display: none;
+  }
+}
+
+/* Show mobile banner on screens smaller than 992px */
+@media (max-width: 991.98px) {
+  .banner_section  {
+    display: none;
+  }
+  .mobile_banner_section {
+    display: block;
+  }
+}
+/* Default: hide on large screens */
+.mobile-only {
+  display: none;
+}
+
+/* Show on screens up to 768px */
+@media (max-width: 768 px) {
+  .mobile-only {
+    display: inline-flex; /* ya inline-block, flex zyada achha hota hai for icon+text */
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,#0e93d8,#32346d);
+    color: white !important;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+  }
+}
+
+
+/* Default: hide */
+.mobile-only {
+  display: none;
+}
+
+
+
+@media (max-width: 991.98px) {
+  .icon_box_content h6 {
+    font-size: 0.85rem;
+  }
+  .icon_box_content p {
+    font-size: 0.7rem;
+  }
+}
+
+

@@ -43,7 +43,7 @@ Version      : 2.0
 *===================================*/
 
 body {
-	background: #ffffff none repeat scroll 0 0;
+	
     color: #888888;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -1273,6 +1273,19 @@ select option {
 /*===================================*
   02. HEADER DESIGN
 *===================================*/
+/* Base Transparent Navbar */
+
+
+/*end*/
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler span {
+  font-size: 1.8rem;
+}
+
 .navbar-brand img {
     max-width: 182px;
 }
@@ -1800,7 +1813,7 @@ select option {
 }
 .top-header,
 .middle-header {
-    padding: 10px 0;
+    padding: 10px 0;	
 }
 .light_skin  .top-header,
 .light_skin  .middle-header {
@@ -2293,7 +2306,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 	padding: 100px 0;
 }
 .overlay_bg::before {
-	background-color: rgba(0, 0, 0, 0.3);
+	
 	bottom: 0;
 	content: "";
 	left: 0;
@@ -3117,7 +3130,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 	transition: all 0.5s ease-in-out;
 }
 .icon_box_content p:last-child {
-	margin: 0;
+	margin: 20px;
 }
 .icon_box_style_2 .box_icon {
 	float: left;
