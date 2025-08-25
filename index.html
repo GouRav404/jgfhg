@@ -4,12 +4,7 @@
 <!-- Meta -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Anil z" name="author">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Anger is a creative business, corporate, portfolio and clean HTML template, Based on Bootstrap, Anger is a multipurpose HTML template with unique home page demo">
-<meta name="keywords" content="creative, fullscreen, business, photography, portfolio, one page, bootstrap responsive, start-up, ui/ux, html template, css3, studio, branding, creative design, multipurpose, multi-purpose, parallax, personal, masonry, grid, coming soon, carousel, agency">
-
-<!-- SITE TITLE -->
 <title>SK Retail</title>
 <!-- Favicon Icon -->
 <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
@@ -17,6 +12,8 @@
 <link rel="stylesheet" href="assets/css/animate.css">	
 <!-- Latest Bootstrap min CSS -->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -37,215 +34,694 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 <link rel="stylesheet" id="layoutstyle" href="assets/color/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons@0.1.2/css/themify-icons.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<link rel="stylesheet" href="assets/css/index.css">
 
-<style>
-.crt-logo{
-    display:none !important;
+<Style>
+
+/* ========== ✅ GENERAL STYLES ========== */
+.navbar {
+  background-color: white !important;
+  padding: 10px 0;
+  transition: background-color 0.8s ease;
 }
-</style>
 
+.navbar-brand img {
+  max-height: 90px;
+}
+
+/* Desktop nav links */
+.navbar .nav-link {
+  color: black !important;
+  padding: 10px 15px;
+  margin: 0 12px;
+  position: relative;
+  font-weight: 500;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 5px;
+  height: 2px;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  opacity: 1;
+  left: 10%;
+  right: 10%;
+}
+
+/* Brochure Button General */
+.brochure-btn {
+  font-size: 1rem;
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  margin-left: 30px;
+  margin-top: 5px;
+  position: relative;
+  top: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.brochure-btn:hover {
+  background-color: blue;
+  color: #000 !important;
+  text-decoration: none;
+}
+
+/* ========== ✅ MOBILE NAVIGATION ========== */
+@media (max-width: 991px) {
+ .navbar-collapse {
+        position: fixed;
+        top: -10px;
+        right: 0 !important;
+        left: auto !important;
+        width: 75%;
+        max-width: 280px;
+        height: 110vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 80px 20px 20px;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+        z-index: 1050;
+        border-radius: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+
+ .navbar-collapse.show {
+    transform: translateX(0);      /* ✅ Slide in from right */
+  }
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    background: transparent !important;
+    width: 100%;
+  }
+
+  .navbar-collapse .nav-item {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white !important;
+    background: transparent;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-collapse .nav-link:hover {
+    color: #00e6e6 !important;
+  }
+
+  .navbar-collapse .brochure-btn {
+    width: 90%;
+    max-width: 240px;
+    margin: 10px ;
+    background-color: #17a2b8;
+    color: black;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	position: relative;
+        top: -90px;
+  }
+
+  .navbar-collapse .brochure-btn:hover {
+    background-color: #00e6e6;
+    color: black !important;
+  }
+
+  .mobile-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
+    display: block;
+  }
+
+  .mobile-close-btn .close-nav {
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .navbar-toggler {
+    z-index: 1101;
+  }
+
+  .navbar-collapse.show ~ .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-toggler.collapsed {
+    display: block;
+  }
+
+  .navbar-toggler:not(.collapsed) {
+    display: none;
+  }
+}
+
+/* ✖ Hide close button on desktop */
+@media (min-width: 992px) {
+  .mobile-close-btn {
+    display: none;
+  }
+}
+
+/* Slide animation */
+@keyframes slideDownDark {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Counter Section Styling */
+.counter_wrap {
+  background-color: #111;
+  padding: 60px 0;
+}
+
+.box_counter {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.box_counter:hover {
+  transform: translateY(-10px);
+  background: #000;
+  border-color: #555;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.box_counter i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.box_counter:hover i {
+  color: #00ffcc;
+}
+
+
+* 🖱️ Button Styling */
+.btn-dark {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  background-color: #00adef ;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #32346d;
+  color:white !important;
+  transform: scale(1.05);
+}
+/* Heading ko bada karne ke liye */
+.heading_s1 h2 {
+  font-size: 32px;   /* default se thoda bada */
+  font-weight: 600;  /* optional, boldness */
+}
+
+/* Form inputs ke liye */
+.field_form input,
+.field_form textarea {
+  font-size: 16px;   /* default usually 14px hota hai, isse thoda bada */
+}
+
+/* Submit button ke liye */
+.field_form button {
+  font-size: 16px;
+  font-weight: 500;
+}
+.girl-image {
+  display: flex;
+  align-items: flex-end; /* or center */
+  justify-content: center;
+  height: 200px;
+  margin-top: 10px;  /* Adjust if needed */
+}
+
+
+..girl-image img {
+  width: 450px;   /* ⬅️ Increase this value for larger image */
+  height: auto;
+  max-width: 100%;  /* Keeps it responsive on smaller screens */
+}
+
+.contact-bg {
+  background-color:#0e93d833; /* Light blue - change to any color you like */
+  padding: 80px 0;
+}
+
+.footer_dark .widget_title {
+  color: #17a2b8; /* bright blue, you can replace with your preferred shade */
+}
+@media (max-width: 576px) {
+  .icon_box {
+    padding: 15px !important;
+  }
+  .icon_box i {
+    font-size: 32px !important;
+  }
+  .icon_box_content h5 {
+    font-size: 18px !important;
+  }
+}
+
+  
+
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  /* Heading smaller & remove line break if needed */
+  .heading_s1 h2 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  /* Optional: remove the <br> so it stays single line */
+  .heading_s1 h2 br {
+    display: none;
+  }
+
+  /* Paragraph smaller */
+  .heading_s1 + p,
+  .text-muted {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Icon size smaller */
+  .box_icon {
+    font-size: 28px !important;  /* adjust as needed */
+  }
+
+  /* Title inside each icon box smaller */
+  .icon_box_content h5 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  /* Paragraph inside each icon box smaller */
+  .icon_box_content p,
+  .icon_box_content a {
+    font-size: 12px;
+  }
+}
+/* Default: show desktop image, hide mobile image */
+.img-mobile {
+  display: none;
+}
+
+/* On mobile: hide desktop image, show mobile image and make it responsive */
+@media (max-width: 767px) {
+  .img-desktop {
+    display: none;
+  }
+
+  .img-mobile {
+  display: inline-block;
+  max-width: 70%;   /* instead of 99% to avoid touching sides */
+  height: auto;
+}
+
+}
+
+/* ✅ Desktop adjustments for small desktop screens */
+@media (max-width: 1200px) and (min-width: 992px) {
+  .navbar .nav-link {
+    margin: 0 8px;   /* smaller gaps */
+    font-size: 0.9rem; /* slightly smaller text */
+  }
+
+  .brochure-btn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-left: 10px;
+  }
+
+  .navbar-brand img {
+    max-height: 50px; /* smaller logo */
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 992px) {
+  .navbar .nav-link {
+    margin: 0 6px;
+    font-size: 0.85rem;
+  }
+
+  .brochure-btn {
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    margin-left: 8px;
+  }
+
+  .navbar-brand img {
+    max-height: 45px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-height: 70px;     /* slightly bigger than 40px */
+  }
+
+  .navbar-toggler {
+    font-size: 1.4rem;    /* slightly bigger toggle icon */
+    padding: 6px 8px;
+  }
+
+  .navbar {
+    padding: 8px 0;       /* balanced vertical space */
+  }
+}
+@media (max-width: 767px) {
+  .breadcrumb_section {
+    padding-top: 60px;   /* was 100px */
+    padding-bottom: 60px; 
+  }
+
+  .breadcrumb_section .page-title h1 {
+    font-size: 26px;  /* optional: keep slightly larger text */
+  }
+}
+  }
+@media (max-width: 991.98px) {
+  .navbar .d-flex .btn,
+  .navbar .d-flex .navbar-toggler {
+    margin: 4px !important;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .mobile-only {
+    display: inline-block;
+    background: linear-gradient(90deg,#0e93d8,#32346d);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+}
+
+/* Desktop ya bade screens pe hide karne ke liye */
+@media (min-width: 577px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+
+/* Default: hide */
+.mobile-only {
+  display: none;
+}
+
+
+
+</style>
 </head>
 
 <body>
-
-<!-- LOADER -->
-<div class="preloader">
-    <div class="loader_grid">
-      <div class="loader_box loader_box1"></div>
-      <div class="loader_box loader_box2"></div>
-      <div class="loader_box loader_box3"></div>
-      <div class="loader_box loader_box4"></div>
-      <div class="loader_box loader_box5"></div>
-      <div class="loader_box loader_box6"></div>
-      <div class="loader_box loader_box7"></div>
-      <div class="loader_box loader_box8"></div>
-      <div class="loader_box loader_box9"></div>
-    </div>
-</div>
-<!-- END LOADER --> 
-
-<!-- START HEADER -->
-<header class="header_wrap dark_skin hover_menu_style3">
-  <div class="top-header bg-dark light_skin d-none d-md-block">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <ul class="contact_detail list_none text-center text-md-left">
-                        <li><i class="ti-mobile"></i>098102 37502</li>
-                        <li><i class="ti-location-pin"></i>Delhi, India</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list_none social_icons text-center border_social rounded_social social_white  text-md-right mt-2 mt-md-0">
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <!--<li><a href="#"><i class="ion-social-twitter"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-googleplus"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>-->
-                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+<!-- Header -->
+<header class="header_wrap dark_skin hover_menu_style3" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1030;">
+  <!-- Top Header -->
+  <div class="top-header text-white light_skin d-none d-md-block py-2" style="background-color:black;">
+    <div class="container-fluid px-0">
+      <div class="row align-items-center mx-0">
+        <div class="col-md-8 px-3">
+          <ul class="contact_detail list_none mb-0" style="text-align: left;">
+            <li><i class="ti-mobile"></i> 098102 37502</li>
+            <li><i class="ti-location-pin"></i> Delhi, India</li>
+          </ul>
         </div>
-    </div>
-  <div class="container">
-      
-    <nav class="navbar navbar-expand-lg"> 
-    	<a class="navbar-brand" href="index.html">
-			<img class="logo_light" src="assets/images/sklogo.png" style="max-width: 12vh;" alt="logo" />
-            <img class="logo_dark" src="assets/images/sklogo.png" style="max-width: 12vh;" alt="logo" />
-            <img class="logo_default" src="assets/images/sklogo.png" style="max-width: 12vh;" alt="logo" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
-      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                
-                
-                <li >
-                    <a  class="nav-link " href="index.html">Home</a>
-                           
-                </li>
-                <li>
-                    <a class="nav-link" href="about.html" >About Us</a>
-                        
-                </li>
-                 <li>
-                    <a class="nav-link" href="services.html" >Our Services</a>
-                        
-                </li>
-                                 <li>
-                    <a class="nav-link" href="portfolio.html" >Our Work</a>
-                        
-                </li>
-                
-                                 <li>
-                    <a class="nav-link" href="Contact.html" >Contact</a>
-                        
-                </li>
-                
-                
-            </ul>
+        <div class="col-md-4 px-3">
+          <ul class="list_none social_icons text-center border_social rounded_social social_white text-md-right mb-0">
+            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/skretail19900/"><i class="ion-social-instagram-outline"></i></a></li>
+          </ul>
         </div>
-        
-    </nav>
+      </div>
+    </div>
   </div>
-</header>
-<!-- START HEADER --> 
 
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/sklogo.png" alt="logo" />
+    </a>
+
+    <!-- Mobile download button -->
+ <a class="contact-btn mobile-only d-block d-md-none" href="assets/skr_brochure.pdf" download>
+  <i class="fas fa-download me-1"></i> Download Brochure
+</a>
+
+
+    <!-- Hamburger toggler -->
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ion-android-menu text-dark_skin"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <div class="mobile-close-btn">
+        <button class="close-nav" onclick="closeNavbar()">✖</button>
+      </div>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Our Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Our Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+   <a class="btn btn-dark text-white btn-sm px-4 py-2 rounded-pill shadow brochure-btn d-none d-lg-block"
+   href="assets/skr_brochure.pdf" download>
+  <i class="fas fa-download me-2"></i>Download Brochure
+</a>
+
+
+    </div>
+  </div>
+</nav>
+
+
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const headerWrap = document.querySelector("header.header_wrap");
+
+    if (headerWrap) {
+      function updateBodyPadding() {
+        document.body.style.paddingTop = headerWrap.offsetHeight + "px";
+      }
+      updateBodyPadding();
+      window.addEventListener('resize', updateBodyPadding);
+    }
+
+    function closeNavbar() {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      const toggler = document.querySelector('.navbar-toggler');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        bootstrapCollapse.hide();
+        if (toggler) {
+          toggler.classList.add('collapsed');
+          toggler.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+    window.closeNavbar = closeNavbar;
+
+    document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 991) {
+          closeNavbar();
+        }
+      });
+    });
+
+    document.addEventListener('click', function(event) {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      const toggler = document.querySelector('.navbar-toggler');
+      if (window.innerWidth <= 991 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+        if (!navbarCollapse.contains(event.target) && !toggler.contains(event.target)) {
+          closeNavbar();
+        }
+      }
+    });
+  });
+</script>
+
+
+<!-- Header End -->
+
+<!-- START HEADER --> 
 <!-- START SECTION BANNER -->
+<!-- Desktop Carousel Banner (visible on desktop/tablet) -->
 <section class="banner_section p-0 full_screen">
     <div id="carouselExampleControls" class="banner_content_wrap carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active background_bg overlay_bg" data-img-src="assets/images/20210127_124730-min.jpg">
-        	<div class="banner_slide_content">
-            	<div class="container"><!-- STRART CONTAINER -->
-                <div class="row">
-                    <div class="col-xl-7 col-lg-8 col-sm-12">
-                        <div class="banner_content content_overlay_bg animation text_white" data-animation="fadeIn" data-animation-delay="0.8s">
-                            <h2 class="animation text-uppercase" data-animation="fadeInLeft" data-animation-delay="1s">Responsive Team</h2>
-                            <!--<p class="animation my-4" data-animation="fadeInLeft" data-animation-delay="1.5s"></p>-->
-                            <!--<a class="btn btn-default btn-radius animation" href="#" data-animation="fadeInLeft" data-animation-delay="1.8s">Get Started</a>-->
-                            <!--<a class="btn btn-outline-white btn-radius animation" href="#" data-animation="fadeInLeft" data-animation-delay="1.8s">Learn More</a>-->
-                        </div>
-                    </div>
-                </div>
-            </div><!-- END CONTAINER-->
+        <div class="carousel-inner">
+            <div class="carousel-item active background_bg overlay_bg" data-img-src="assets/11.jpg">
+                <div class="banner_slide_content"><div class="container"></div></div>
+            </div>
+            <div class="carousel-item background_bg overlay_bg" data-img-src="assets/12b.png">
+                <div class="banner_slide_content"><div class="container"></div></div>
+            </div>
+            <div class="carousel-item background_bg overlay_bg" data-img-src="assets/13b.jpg">
+                <div class="banner_slide_content"><div class="container"></div></div>
             </div>
         </div>
-        <div class="carousel-item background_bg overlay_bg" data-img-src="assets/images/20200830_010212-min.jpg">
-        	<div class="banner_slide_content">
-                <div class="container"><!-- STRART CONTAINER -->
-                    <div class="row justify-content-center">
-                        <div class="col-xl-7 col-lg-8 col-sm-12 text-center">
-                            <div class="banner_content content_overlay_bg animation text_white" data-animation="fadeIn" data-animation-delay="0.8s">
-                                <h2 class="animation text-uppercase" data-animation="fadeInDown" data-animation-delay="1s">easy To build </h2>
-                             <!--   <p class="animation my-4" data-animation="fadeInUp" data-animation-delay="1.5s"></p>-->
-                             <!--   <a class="btn btn-default btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">Get Started</a>-->
-                            	<!--<a class="btn btn-radius btn-outline-white animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">Learn More</a>-->
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- END CONTAINER-->
-            </div>
-        </div>
-        <div class="carousel-item background_bg overlay_bg" data-img-src="assets/images/20200830_010617-min.jpg">
-        	<div class="banner_slide_content">
-                <div class="container"><!-- STRART CONTAINER -->
-                    <div class="row justify-content-end">
-                        <div class="col-xl-7 col-lg-8 col-sm-12 text-right">
-                            <div class="banner_content content_overlay_bg animation text_white" data-animation="fadeIn" data-animation-delay="0.8s">
-                                <h2 class="animation text-uppercase" data-animation="fadeInRight" data-animation-delay="1s">Faster And Easy </h2>
-                                <p class="animation my-4" data-animation="fadeInRight" data-animation-delay="1.5s"></p>
-                                <!--<a class="btn btn-default btn-radius animation" href="#" data-animation="fadeInRight" data-animation-delay="1.8s">Get Started</a>-->
-                            	<!--<a class="btn btn-radius btn-outline-white animation" href="#" data-animation="fadeInRight" data-animation-delay="1.8s">Learn More</a>-->
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- END CONTAINER-->
-            </div>
-        </div>
-    </div>
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-        <li data-target="#carouselExampleControls" data-slide-to="2"></li>
-    </ol>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <i class="ion-chevron-left"></i>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <i class="ion-chevron-right"></i>
-    </a>
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+        </ol>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <i class="ion-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <i class="ion-chevron-right"></i>
+        </a>
     </div>
 </section>
+
+<!-- Mobile Banner Slider (visible only on mobile) -->
+<section class="mobile_banner_section">
+    <div id="mobileBannerCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/new1.png" alt="Slide 1" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/n3.jpg" alt="Slide 2" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/new3.png" alt="Slide 3" class="d-block w-100">
+            </div>
+        </div>
+        <!-- Optional indicators & arrows -->
+        <ol class="carousel-indicators">
+            <li data-target="#mobileBannerCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mobileBannerCarousel" data-slide-to="1"></li>
+            <li data-target="#mobileBannerCarousel" data-slide-to="2"></li>
+        </ol>
+        <a class="carousel-control-prev" href="#mobileBannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#mobileBannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</section>
+
 <!-- END SECTION BANNER --> 
 
 <!-- START SECTION ABOUT US -->
 <section class="light_gray_bg pb-sm-0">
-    <div class="container">
+    <div class="container text-center">
         <div class="row justify-content-center">
-            <div class="col-lg-12 col-md-9 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                <div class="heading_s1 text-center"> 
-                  <h1>About The SK Retail</h1>
+            <div class="col-lg-8 col-md-10 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                <div class="heading_s1 text-center">
+                    <h1>About The SK Retail</h1>
                 </div>
-                <p>SK Retail is an endeavor to give unmatched quality & service in the industry within the set time span.Sk Retail advertising has built a loyal patronage by providing our clients  with quality, reliable products and efficient, friendly customer service.
-Industry resources allow us to obtain superior products and materials at the lowest prices, while  always maintaining the highest quality. This ongoing commitment to maintaining solid client relationships is what allows us to be the  most trusted name in the industry.
-We guarantee 100 percent client satisfaction for all products we manufacture.
-</p>
+                <p style="line-height:1.8">
+                    SK Retail is an endeavor to give unmatched quality & service in the industry within the set time span. 
+                    We’ve built a loyal patronage by delivering reliable, high-quality signage using cutting-edge technology. 
+                    With a 60-member strong team and in-house capabilities in design, printing, and installation — 
+                    we deliver cost-effective solutions with 100% client satisfaction.
+                </p>
             </div>
-         </div>
-        <!-- <div class="row justify-content-center">-->
-        <!-- 	<div class="col-md-9"> -->
-        <!--        <div class="video_box overlap_video overlay_bg2 overflow_hide radius_box_10 animation" data-animation="fadeInUp" data-animation-delay="0.4s">-->
-        <!--        	<img src="assets/images/about_img11.jpg" alt="about_img11">-->
-        <!--            <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="video_popup video_play"><img class="bounce_img" src="assets/images/play-icon.png" alt="play-icon"> <span>How It Works</span></a>-->
-        <!--        </div>-->
-        <!--    </div>-->
-        <!--</div>-->
+        </div>
     </div>
 </section>
-<!-- END SECTION ABOUT US --> 
-<!-- START SECTION COUNTER --> 
-<section class="counter_wrap light_gray_bg small_pt small_pb">
+<!-- END SECTION ABOUT US -->
+
+<!-- START SECTION COUNTER -->
+<section class="counter_wrap small_pt small_pb  custom-counter-bg">
     <div class="container">
-        <div class="row">
-            
-            <div class="col-lg-4 col-md-4 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                <div class="box_counter counter_style1 counter_dark text-center">
-                    <i class="ion-clock text_warning"></i>
-                    <h3 class="counter_text"><span class="counter">1700</span></h3>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+                <div class="box_counter">
+                    <i class="ion-clock"></i>
+                    <h3 class="counter_text"><span class="counter">1700</span>+</h3>
                     <p>Hours of Work</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.6s">
-                <div class="box_counter counter_style1 counter_dark text-center">
-                    <i class="ion-easel text_danger"></i>
-                    <h3 class="counter_text"><span class="counter">1200</span>+</h3>
-                    <p>Project Complete</p>
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+                <div class="box_counter">
+                    <i class="ion-briefcase"></i>
+                    <h3 class="counter_text"><span class="counter">20</span>+</h3>
+                    <p>Years of Experience</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.8s">
-                <div class="box_counter counter_style1 counter_dark text-center">
-                    <i class="ion-android-contacts text_success"></i>
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+               <div class="box_counter">
+                    <i class="ion-easel"></i>
+                    <h3 class="counter_text"><span class="counter">1200</span>+</h3>
+                    <p>Projects Completed</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+                <div class="box_counter">
+                    <i class="ion-android-contacts"></i>
                     <h3 class="counter_text"><span class="counter">1500</span>+</h3>
                     <p>Happy Clients</p>
                 </div>
@@ -255,249 +731,314 @@ We guarantee 100 percent client satisfaction for all products we manufacture.
 </section>
 <!-- END SECTION COUNTER -->
 <!-- START SECTION FEATURE -->
-<section class="small_pb">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12">
-            	<div class="clearfix small_divider d-none d-sm-block"></div>
-            </div>
-        </div>
-    	<div class="row">
-        	<div class="col-md-12">
-            	<div class="heading_s1 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                	<h2>Why Choose us?</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-        	<div class="col-md-12">
-            	<div class="clearfix small_divider"></div>
-            </div>
-        </div>
-    	<div class="row justify-content-center animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-        	<div class="col-md-4 col-sm-6 mb-lg-5 mb-3 text-center">
-            	<div class="icon_box icon_box_style_1">
-                    <div class="box_icon mb-3">	
-                       <a href="we-offer.html">  <i class="icon icon-cog"></i></a>
-                    </div>
-                    <div class="icon_box_content">
-                        <a href="we-offer.html">  <h5>Manufacture</h5></a>
-<p>With decades of manufacturing and engineering experience at Vista, you can be confident that your fittings, furniture and installations 
-will be of the highest quality finish </p>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-4 col-sm-6 mb-lg-5 mb-3 text-center">
-            	<div class="icon_box icon_box_style_1">
-                    <div class="box_icon mb-3">	
-                       <a href="we-offer.html"> <i class="icon icon-eye"></i></a>
-                    </div>
-                    <div class="icon_box_content">
-                        <a href="we-offer.html"><h5>Design and Development</h5></a>
-                        <p>Our extensive experience of working with brands and retailers results in creative and engaging design underpinned by the latest in passenger trends and shopper insights.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-lg-5 mb-3 text-center">
-            	<div class="icon_box icon_box_style_1">
-                    <div class="box_icon mb-3">	
-                       <a href="we-offer.html">  <i class="icon icon-equalizer2"></i></a>
-                    </div>
-                    <div class="icon_box_content">
-                        <a href="we-offer.html"> <h5>Project Management </h5></a>
-                        <p>From the beginning of a concept, right through to the final installation, we appoint a dedicated and experienced manager to oversee each project with detail and precision.</p>
-                    </div>
-                 </div>
-            </div>
-        	<div class="col-md-4 col-sm-6 mb-lg-5 mb-3 text-center">
-            	<div class="icon_box icon_box_style_1">
-                    <div class="box_icon mb-3">	
-                       <a href="we-offer.html"> <i class="icon icon-embed2"></i></a>
-                    </div>
-                    <div class="icon_box_content">
-                      <a href="we-offer.html">  <h5>Installation / Align  locally</h5></a>
-                        <p>Vista’s Pan India presence ensures that we can guarantee local access to even the most challenging of locations.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-lg-5 mb-3 text-center">
-            	<div class="icon_box icon_box_style_1">
-                    <div class="box_icon mb-3">	
-                    <a href="we-offer.html">    <i class="icon icon-lifebuoy"></i></a>
-                    </div>
-                    <div class="icon_box_content">
-                      <a href="we-offer.html">  <h5>Measurements on site </h5></a>
-                        <p>Recce is an important part to begin any project. We have services for site measurements with all precision and image reports.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-lg-5 mb-3 text-center">
-            	<div class="icon_box icon_box_style_1">
-                    <div class="box_icon mb-3">	
-                         <a href="we-offer.html"><i class="icon icon-cog"></i></a>
-                    </div>
-                    <div class="icon_box_content">
-                         <a href="we-offer.html"><h5>Maintenance</h5></a>
-                        <p>We are renowned for the ongoing care and professional relationships we maintain with our clients, many of whom work with us on a retainer-based model.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800
+  });
+</script>
+
+<section class="pt-5 pb-5" style="background-color: #f7f9fc;">
+  <div class="container">
+    <div class="row mb-4 text-center">
+      <div class="col-md-12">
+        <h2 class="fw-bold" style="font-size: 1.7rem; color: #1c1c1c;">Why Choose Us?</h2>
+        <div class="underline mx-auto my-3" style="width: 60px; height: 4px; background-color: #ff5e57; border-radius: 5px;"></div>
+      </div>
     </div>
+
+    <div class="row justify-content-center">
+     <div class="col-6 col-sm-4 col-md-2 text-center card-zigzag top-border">
+
+        <div class="icon_box p-4 bg-white rounded shadow d-flex flex-column align-items-center">
+          <div class="box_icon icon-circle  mb-3">
+            <i class="icon icon-cog" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <div class="icon_box_content">
+            <h6 class="fw-semibold">Manufacture</h6>
+            <p class="small mt-2">Decades of manufacturing experience at Vista ensure top quality finish.</p>
+          </div>
+        </div>
+      </div>
+
+     <div class="col-6 col-sm-4 col-md-2 text-center card-zigzag top-border">
+
+        <div class="icon_box p-4 bg-white rounded shadow d-flex flex-column align-items-center">
+          <div class="box_icon  icon-circle mb-3">
+            <i class="icon icon-eye" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <div class="icon_box_content">
+            <h6 class="fw-semibold">Design & Development</h6>
+            <p class="small mt-2">Creative and engaging design using latest shopper insights.</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-6 col-sm-4 col-md-2 text-center card-zigzag top-border">
+        <div class="icon_box p-4 bg-white rounded shadow d-flex flex-column align-items-center">
+          <div class="box_icon icon-circle  mb-3">
+            <i class="icon icon-equalizer2" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <div class="icon_box_content">
+            <h6 class="fw-semibold">Project Management</h6>
+            <p class="small mt-2">From concept to installation, every project managed with precision.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-2 text-center card-zigzag top-border">
+        <div class="icon_box p-4 bg-white rounded shadow d-flex flex-column align-items-center">
+          <div class="box_icon icon-circle  mb-3">
+            <i class="icon icon-embed2" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <div class="icon_box_content">
+            <h6 class="fw-semibold">Installation</h6>
+            <p class="small mt-2">Pan India presence ensures local access to challenging locations.</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-6 col-sm-4 col-md-2 text-center card-zigzag top-border">
+        <div class="icon_box p-4 bg-white rounded shadow d-flex flex-column align-items-center">
+          <div class="box_icon icon-circle  mb-3">
+            <i class="icon icon-lifebuoy" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <div class="icon_box_content">
+            <h6 class="fw-semibold">Measurements</h6>
+            <p class="small mt-2">Recce & site measurement services with precision reports.</p>
+          </div>
+        </div>
+      </div>
+ <div class="col-6 col-sm-4 col-md-2 text-center card-zigzag top-border">
+        <div class="icon_box p-4 bg-white rounded shadow d-flex flex-column align-items-center">
+          <div class="box_icon  icon-circle mb-3">
+            <i class="icon icon-cog" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <div class="icon_box_content">
+            <h6 class="fw-semibold">Maintenance</h6>
+            <p class="small mt-2">Ongoing care & professional relationships with clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+
+
 <!-- END SECTION FEATURE -->
-<!-- START SECTION CLIENT LOGO -->
-<section class="small_pt small_pb bg_blue">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-            	<div class="cl_logo_slider owl-carousel owl-theme" data-margin="30" data-loop="true" data-autoplay="true" data-dots="false" data-autoplay-timeout="2000">
-                	<div class="item">
-                    	<a href="#"><img src="assets/images/1loreal.png" alt="cl_logo1_white"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="assets/images/14sugar.png" alt="cl_logo2_white"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="assets/images/4loccitane.png" alt="cl_logo3_white"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="assets/images/11giordano.png" alt="cl_logo4_white"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="assets/images/2maybelline.png" alt="cl_logo5_white"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="assets/images/6casio.png" alt="cl_logo6_white"/></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- start brand FEATURE -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  document.querySelectorAll('.icon-circle').forEach(iconBox => {
+    iconBox.addEventListener('click', () => {
+      // Toggle active class
+      iconBox.classList.toggle('active');
+    });
+  });
+</script>
+
+<section class="pt-5 pb-5" style="background: linear-gradient(135deg, #1c1c1c, #2a2a2a); position: relative; overflow: hidden;">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="row mb-4 text-center">
+      <div class="col-12">
+        <h2 class="fw-bold text-white" style="font-size: 2rem;">Our Trusted Brand Partners</h2>
+        <p class="text-light" style="font-size: 1rem;">
+          We proudly collaborate with the top names in fashion, beauty, and lifestyle.
+        </p>
+        <div class="underline mx-auto my-3" style="width: 60px; height: 4px; background-color: #ff5e57; border-radius: 5px;"></div>
+      </div>
     </div>
+
+    <!-- Image Row -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-10 col-lg-8 text-center">
+        <div class="brand-logos-wrapper" data-aos="fade-up" data-aos-delay="150">
+          <img src="assets/images/logos.jpg"
+               alt="Brand Logos"
+               class="img-fluid rounded shadow border w-100"
+               style="max-width: 100%; height: auto; border-color: #444; transition: transform 0.3s ease-in-out;">
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- START SECTION CLIENT LOGO -->
+
+<script>
+  AOS.init();
+</script>
 
 
-<!-- START SECTION PORTFOLIO -->
-<section>
-    <div class="container">
-    	<div class="row justify-content-center">
-        	<div class="col-lg-6 col-md-9 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                <div class="heading_s1 text-center">
-                    <h2>Our Latest works</h2>
-                </div>
-                <!--<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>-->
-            </div>
+<!-- START SECTION CLIENT LOGO -->
+<section class="portfolio_section py-5 bg-light text-dark">
+  <div class="container">
+  
+    <div class="row align-items-center">
+	
+      <div class="col-md-6 mb-4 mb-md-0">
+
+
+        <div id="collage-grid" class="collage-grid">
+		
+
+          <div class="grid-item big"><img src="assets/gallery/1.webp" alt=""></div>
+          <div class="grid-item wide"><img src="assets/gallery/2.webp" alt=""></div>
+          <div class="grid-item tall" style="grid-column: span 2; grid-row: span 2;"><img src="assets/gallery/3.webp" alt=""></div>
+          <div class="grid-item small" style="grid-column: span 2; grid-row: span 1;"><img src="assets/gallery/4.webp" alt=""></div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="cleafix small_divider"></div>
-            </div>
-        </div>
-        <!--<div class="row mb-3 mb-sm-5">-->
-        <!--    <div class="col-md-12 text-center">-->
-        <!--        <ul class="list_none portfolio_filter filter_tab3 animation" data-animation="fadeInUp" data-animation-delay="0.3s">-->
-        <!--            <li><a href="#" class="current" data-filter="*">all</a></li>-->
-        <!--            <li><a href="#" data-filter=".brands">Brands</a></li>-->
-        <!--            <li><a href="#" data-filter=".design">Design</a></li>-->
-        <!--            <li><a href="#" data-filter=".web">Web</a></li>-->
-        <!--            <li><a href="#" data-filter=".adv">Advertising</a></li>-->
-        <!--        </ul>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="portfolio_container gutter_small work_col4 portfolio_gallery portfolio_style2 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
-                	
-                    <!-- Place <div> tag where you want the feed to appear -->
-<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
-/* curator-feed-default-feed-layout */
-(function(){
-var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-i.src="https://cdn.curator.io/published/aca590c6-242b-4b43-a35b-988bbdfe2d7f.js";
-e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-})();
-</script> 
-                        
-                </ul>
-            </div>
-        </div>
+			 
+
+      </div>
+	  	 
+ 
+     <div class="col-md-6 text-section text-center position-relative">
+  <img src="assets/images/a2.svg" alt="decorative leaf" class="svg-leaf">
+
+  <h2>Our Latest Works</h2>
+  <p class="lead">"Our recent collaborations with leading beauty and personal care brands showcase our commitment to precision, creativity, and premium execution."</p>
+  <p class="small text-muted">Each design reflects our dedication to innovation, aesthetic excellence, and customer satisfaction.</p>
+  <button id="loadMoreBtn" class="btn btn-dark mt-2">Load More</button>
+</div>
+
     </div>
+  </div>
 </section>
+
+
+<script>
+const totalImages = 52;
+let currentIndex = 5; // pehli 4 already hain
+
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+loadMoreBtn.addEventListener("click", () => {
+  const gridItems = document.querySelectorAll('.collage-grid .grid-item img');
+  for (let i = 0; i < gridItems.length; i++) {
+    if (currentIndex <= totalImages) {
+      gridItems[i].src = `assets/gallery/${currentIndex}.webp`;
+      currentIndex++;
+    } else {
+      loadMoreBtn.style.display = "none";
+      break;
+    }
+  }
+});
+</script>
+
+
+
+
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
 <!-- END SECTION PORTFOLIO -->
 
 <!-- START FOOTER SECTION --> 
 <footer class="pattern_top footer_dark">
-	<div class="top_footer">
+    <div class="top_footer">
         <div class="container">
-        	<div class="row">
-            	<div class="col-md-12">
-                	<div class="medium_divider"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="medium_divider"></div>
                 </div>
             </div>
             <div class="row">
+                <!-- Contact Info -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                	<!--<div class="footer_logo">-->
-                 <!--   	<a href="index-2.html"><img alt="logo" src="assets/images/sklogo_white.jpeg" style="max-width: 12vh;"></a>-->
-                 <!--   </div>-->
-                 <!--   <p>Phasellus blandit massa enim. elit id varius nunc. Lorem ipsum dolor sit amet, consectetur industry.</p>-->
-                    <ul class="contact_info contact_info_light list_none">
+				 <h6 class="widget_title">Connect With Us</h6>
+                    <ul class="contact_info contact_info_light" style="list-style: none; padding-left: 0;">
                         <li>
-                            <span class="ti-location-pin"></span>
-                            <address>Delhi, India</address>
+                            <span class="ti-location-pin" style="margin-right: 8px;"></span>
+                            <span>Delhi, India</span>
                         </li>
                         <li>
-                            <span class="ti-email"></span>
-                            <a href="mailto:info@skretail.in">info@skretail.in</a>
+                            <span class="ti-email" style="margin-right: 8px;"></span>
+                            <a href="mailto:info@skretail.in" style="color: white;">info@skretail.in</a>
                         </li>
                         <li>
-                            <span class="ti-mobile"></span>
-                            <a href="tel:+919810237502">+91 98102 37502</a>
+                            <span class="ti-mobile" style="margin-right: 8px;"></span>
+							 <a href="tel:+91 98102 37502" style="color: white;">+91 98102 37502</a>
+                            
                         </li>
                     </ul>
                 </div>
+
+                <!-- Useful Links -->
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                	<h6 class="widget_title">USEFUL LINKS</h6>
+                    <h6 class="widget_title">USEFUL LINKS</h6>
                     <ul class="list_none widget_links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Our Work</a></li>
-                        <li><a href="services.html">Our services</a></li>
-                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="service.html">Our Services</a></li>                       
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
-                    
+
+                <!-- Social + Extra Info -->
+                <div class="col-lg-3 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                     <h6 class="widget_title">Follow Us</h6>
                     <ul class="list_none footer_social">
-                    	<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <!--<li><a href="#"><i class="ion-social-twitter"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-googleplus"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>-->
-                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>                    
+                        <li><a href="https://www.instagram.com/skretail19900/"><i class="ion-social-instagram-outline"></i></a></li>
                     </ul>
+
+                    <h6 class="widget_title mt-3">Working Hours</h6>
+                    <p style="color: white; font-size: 14px;">
+                        Mon – Fri: 9:00 AM – 6:00 PM<br>
+                        Sat: 10:00 AM – 4:00 PM<br>
+                        Sun: Closed
+                    </p>
+                </div>
+
+                <!-- Google Map + Trust Badges -->
+                <div class="col-lg-4 col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+                    <h6 class="widget_title">Find Us</h6>
+                    <div style="border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3506.9322015046164!2d77.18262097549524!3d28.481588375747446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI4JzUzLjciTiA3N8KwMTEnMDYuNyJF!5e0!3m2!1sen!2sin!4v1749030040393!5m2!1sen!2sin" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>		
+					
+                    <h6 class="widget_title">Our Trusted Partners</h6>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <img src="assets/images/indiamart.jpg" alt="IndiaMART" style="height: 40px; margin-right: 10px;">
+                        <img src="assets/images/startup-india.png" alt="Startup India" style="height: 40px; margin-right: 10px;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="bottom_footer bg-dark">
-    	<div class="container">
-        	<div class="row align-items-center">
-            	<div class="col-md-6">
-                	<p class="copyright m-md-0 text-center text-md-left">&copy; 2018 All Rights Reserved by Sk Retail.</p>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright m-md-0 text-center text-md-left">
+                       <script>document.write(new Date().getFullYear());</script> All Rights Reserved by Sk Retail.
+                    </p>
                 </div>
                 <div class="col-md-6">
-                	 <div class="row justify-content-center"><p style="display: inline-block;">Site Maintaned &amp; developed by&nbsp;&nbsp;</p>
-<a href="https://svinfotechsoftwaresolutions.com/" target="_blank" title="Sv infotech Software solutions Dehradun" style="color: white;width: 15%;"> <img class="mobologo" src="assets/images/small_SV_logo.png" alt="Sv infotech Software solutions Dehradun"></a></div>
-                
+                    <div class="row justify-content-center">
+                        <p style="display: inline-block;">Site Maintained &amp; Developed by&nbsp;&nbsp;</p>
+                        <a href="https://svinfotechsoftwaresolutions.com/" target="_blank" title="Sv infotech Software solutions Dehradun" style="color: white;width: 15%;">
+                            <img class="mobologo" src="assets/images/small_SV_logo.png" alt="Sv infotech Software solutions Dehradun">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
 <!-- END FOOTER SECTION --> 
 
 <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <!-- Latest jQuery --> 
 <script src="assets/js/jquery-1.12.4.min.js"></script> 
@@ -526,7 +1067,5 @@ e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
 <!-- scripts js --> 
 <script src="assets/js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
 </html>

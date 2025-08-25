@@ -35,18 +35,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 <link rel="stylesheet" id="layoutstyle" href="assets/color/theme.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- Font Awesome Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<!-- AOS Library (for animation effects) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 <Style>
-
-
-/* ========== ✅ GENERAL STYLES ========== */
-
-
 /* ========== ✅ GENERAL STYLES ========== */
 .navbar {
   background-color: white !important;
@@ -126,8 +115,7 @@
         border-radius: 0;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        display: flex
-;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -165,7 +153,7 @@
   .navbar-collapse .brochure-btn {
     width: 90%;
     max-width: 240px;
-    margin: 10px;
+    margin: 10px ;
     background-color: #17a2b8;
     color: black;
     border-radius: 30px;
@@ -271,38 +259,7 @@
   color: #00ffcc;
 }
 
-.counter_text {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-}
 
-.box_counter p {
-  color: #bbb;
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-.contact_info li {
-  margin-bottom: 10px;
-  color: white;
-  display: flex;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
-
-.contact_info a {
-  color: white;
-  text-decoration: none;
-}
-
-.contact_info a:hover {
-  text-decoration: underline;
-}
-.brand-logos-wrapper img:hover {
-  transform: scale(1.03);
-}
 
 * 🖱️ Button Styling */
 .btn-dark {
@@ -319,364 +276,34 @@
   background-color: #32346d;
   color:white !important;
   transform: scale(1.05);
-}
-.contact_info li {
-  margin-bottom: 10px;
-  color: white;
-  display: flex;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
-
-.contact_info a {
-  color: white;
-  text-decoration: none;
-}
-
-.contact_info a:hover {
-  text-decoration: underline;
-}
-.brand-logos-wrapper img:hover {
-  transform: scale(1.03);
-}
-* 🖱️ Button Styling */
-.btn-dark {
-  padding: 12px 30px;
-  font-size: 1rem;
-  border-radius: 30px;
-  background-color: #00adef ;
-  color: #fff;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.btn-dark:hover {
-  background-color: #32346d;
-  color:white !important;
-  transform: scale(1.05);
-}
-
-.about_section {
-  background-color: #212529;
-  color: #fff;
-  padding: 3rem 0;
-}
-
-/* About section - custom image grid */
-.custom-image-grid {
-  position: relative;
-  width: 100%;
-  max-width: 520px;           /* larger max width */
-  margin: auto;
-}
-
-.custom-image-grid .img-main {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  
-}
-
-.custom-image-grid .img-overlay {
-  position: absolute;
-  top: -40px;                /* move a bit more up */
-  right: -110px;              /* move more to right so it overlaps out more */
-  width: 60%;                /* bigger overlay image */
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-
-/* Badge circle design - cleaner and balanced */
-.badge-circle {
-  position: absolute;
-  bottom: -20px;         /* adjust as needed */
-  left: -20px;           /* adjust as needed */
-  background: #007bff;   /* blue color, change if needed */
-  color: #fff;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  font-size: 16px;
-  font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  line-height: 1.1;
-  padding: 5px;
-}
-
-.badge-circle small {
-  font-weight: normal;
-  font-size: 10px;
-  line-height: 1.2;
-}
-
-/* Responsive tweaks */
-@media (max-width: 991px) {
-  .custom-image-grid {
-    margin: 0 auto;
-  }
-  .custom-image-grid .img-main {
-    max-width: 300px;
-  }
-  .custom-image-grid .img-overlay {
-    width: 50%;
-    top: -10px;
-    right: -10px;
-  }
-  .badge-circle {
-    width: 60px;
-    height: 60px;
-    font-size: 12px;
-  }
-}
-/* Button base styles */
-button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background: transparent;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-  vertical-align: middle;
-  text-decoration: none;
-}
-
-/* Learn more button wrapper */
-button.learn-more {
-  width: 14rem;             /* wider for better look */
-  height: 3.5rem;           /* fixed height */
-}
-
-/* Circle part */
-button.learn-more .circle {
-  position: relative;
-  display: block;
-  width: 3.2rem;
-  height: 3.2rem;
-  margin: 0;
-  background:#007bff;
-  border-radius: 50%;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-/* Arrow icon inside circle */
-button.learn-more .circle .icon.arrow {
-  position: absolute;
-  left: 0.7rem;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 1.125rem;
-  height: 0.125rem;
-  background: none;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-button.learn-more .circle .icon.arrow::before {
-  content: "";
-  position: absolute;
-  top: -0.29rem;
-  right: 0.0625rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-right: 0.125rem solid #fff;
-  transform: rotate(45deg);
-}
-
-/* Text part */
-button.learn-more .button-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin-left: 2.2rem;       /* align text nicely next to circle */
-  padding: 0.8rem 0;
-  color: #ddd;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-/* Hover effects */
-button:hover .circle {
-  width: 100%;
-  border-radius: 2rem;        /* subtle capsule shape when expanding */
-}
-
-button:hover .circle .icon.arrow {
-  background: #fff;
-  transform: translate(1rem, 0);
-}
-
-button:hover .button-text {
-  color: #fff;
-}
-/* Make Why Choose Us cards more curved */
-.why_choose_us_section .card {
-  border-radius: 1.5rem !important;  /* adjust value as you like (e.g., 1rem, 2rem) */
-}
-.why_choose_us_section .row > div:nth-child(1) .card {
-  border-bottom: 4px solid #0d6efd !important; /* blue */
-}
-
-.why_choose_us_section .col-lg-3:nth-child(2) .card {
-  border-bottom: 4px solid #198754 !important; /* green */
-}
-
-.why_choose_us_section .col-lg-3:nth-child(3) .card {
-  border-bottom: 4px solid #ffc107 !important; /* yellow */
-}
-
-.why_choose_us_section .col-lg-3:nth-child(4) .card {
-  border-bottom: 4px solid #dc3545 !important; /* red */
-}
-
-.why_choose_us_section .card-body h5 {
-  font-size: 1.25rem;   /* increase title size, e.g., 20px */
-}
-
-.why_choose_us_section .card-body p {
-  font-size: 0.95rem;   /* increase paragraph text */
-}
-
-
-.about_section .container {
-  margin-top: 40px; /* or adjust to taste */
-}
-
-@media (max-width: 768px) {
-  .about_section p {
-    font-size: 13px;
-    line-height: 1.6;
-  }
-}
-
-.custom-image-grid {
-  position: relative;
-}
-
-.custom-image-grid .img-main {
-  width: 100%;
-  height: auto;
-   border: 3px solid #fff;
-}
-
-.custom-image-grid .img-overlay {
-  position: absolute;
-  top: -40px;
-  right: -110px;
-  width: 60%;
-  height: auto;
-      border: 3px solid #fff;
-}
-
-/* Badge circle design - cleaner and balanced */
-.badge-circle {
-  position: absolute;
-  bottom: -20px;         /* adjust as needed */
-  left: -20px;           /* adjust as needed */
-  background: #007bff;   /* blue color, change if needed */
-  color: #fff;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  font-size: 16px;
-  font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  line-height: 1.1;
-  padding: 5px;
-}
-
-.badge-circle small {
-  font-weight: normal;
-  font-size: 10px;
-  line-height: 1.2;
-}
-
-/* Mobile view: show images separate */
-@media (max-width: 768px) {
-  .custom-image-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .custom-image-grid .img-overlay {
-    position: static;
-    width: 80%;
-    margin-top: 10px;
-  }
-
-  .custom-image-grid .badge-circle {
-    position: static;
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    font-size: 11px;
-  }
-}
-
-
-.learn-more {
-  padding: 6px 16px;
-  font-size: 14px;
-}
-
-.learn-more .circle {
-  width: 24px;
-  height: 24px;
-}
-
-.learn-more .button-text {
-  font-size: 13px;
-}
-
-@media (max-width: 768px) {
-  .learn-more {
-    padding: 4px 12px;
-    font-size: 12px;
-  }
-
-  .learn-more .circle {
-    width: 20px;
-    height: 20px;
-  }
-
-  .learn-more .button-text {
-    font-size: 11px;
-  }
-}
-.@media (max-width: 768px) {
-  .badge-circle {
-    display: none;
-  }
 }
 
 
 .footer_dark .widget_title {
   color: #17a2b8; /* bright blue, you can replace with your preferred shade */
 }
+
+@media (max-width: 767px) {
+  .testimonial_box {
+    padding: 10px;
+    max-width: 90%;      /* keep inside screen */
+    margin: 0 auto;      /* center */
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonial_box {
+    padding: 10px;
+  }
+  .testi_meta p {
+    font-size: 13px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 
 /* ✅ Desktop adjustments for small desktop screens */
 @media (max-width: 1200px) and (min-width: 992px) {
@@ -712,7 +339,6 @@ button:hover .button-text {
     max-height: 45px;
   }
 }
-
 @media (max-width: 767px) {
   .navbar-brand img {
     max-height: 70px;     /* slightly bigger than 40px */
@@ -737,16 +363,13 @@ button:hover .button-text {
     font-size: 26px;  /* optional: keep slightly larger text */
   }
 }
-  }
+
 @media (max-width: 991.98px) {
   .navbar .d-flex .btn,
   .navbar .d-flex .navbar-toggler {
     margin: 4px !important;
   }
 }
-
-
-
 
 @media (max-width: 576px) {
   .mobile-only {
@@ -807,7 +430,8 @@ button:hover .button-text {
     </div>
   </div>
 
-    <!-- Navbar -->
+  <!-- Navbar -->
+   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -815,7 +439,7 @@ button:hover .button-text {
     </a>
 
     <!-- Mobile download button -->
-      <!-- Mobile download button -->
+    <!-- Mobile download button -->
  <a class="contact-btn mobile-only d-block d-md-none" href="assets/skr_brochure.pdf" download>
   <i class="fas fa-download me-1"></i> Download Brochure
 </a>
@@ -847,7 +471,6 @@ button:hover .button-text {
     </div>
   </div>
 </nav>
-
 
 </header>
 <script>
@@ -907,224 +530,108 @@ button:hover .button-text {
 });
 </script>
 <!-- Header End -->
-<!-- START HEADER --> 
-
 <!-- START SECTION BANNER -->
- <section class="page-title-light breadcrumb_section background_bg blue_overlay_bg"
-         style="background-image: url('assets/images/b1.png');background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;">
-
+<section class="page-title-light breadcrumb_section background_bg blue_overlay_bg" data-img-src="assets/images/b1.png">
 	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12  text-center">
+    	<div class="row align-items-center">
+        	<div class="col-sm-6">
             	<div class="page-title">
-            		<h1>About Us</h1>
+            		<h1>Testimonials</h1>
                 </div>
+            </div>
+            <div class="col-sm-6">
                 <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb justify-content-center">
+                  <ol class="breadcrumb justify-content-sm-end">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About Us </li>
+                    <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
                   </ol>
                 </nav>
             </div>
         </div>
     </div>
 </section>
-<!-- END SECTION BANNER --> 
+<!-- END SECTION BANNER -->
 
-<section class="about_section py-5  bg-dark text-white">
-<div class="container mt-4 mt-md-5">
+<!-- START SECTION TESTIMONIALS -->
 
-    <div class="row align-items-center">
-      
-      <!-- Text Content -->
-      <div class="col-lg-6 mb-4  mt-2 mb-lg-0">
-        <div class="heading_s3 mb-3">
-          <h3 class="text-white">About</h3>
-        </div>
-        <p>
-          SK Retail (A division of SK Retail) is an endeavor to give unmatched quality & service in the industry within the set time span. SK Retail advertising has built a loyal patronage by providing our clients with quality, reliable products, and efficient, friendly customer service.
-        </p>
-        <p>
-          Industry resources allow us to obtain superior products and materials at the lowest prices, while always maintaining the highest quality. Our ongoing commitment to maintaining solid client relationships is what allows us to be the most trusted name in the industry. We guarantee 100% client satisfaction for all products we manufacture.
-        </p>
-		<a href="portfolio.html" style="text-decoration: none;">
-  <button class="learn-more">
-    <span class="circle" aria-hidden="true">
-      <span class="icon arrow"></span>
-    </span>
-    <span class="button-text">View Our Work</span>
-  </button>
-</a>
-
-
-      </div>
-	  
-
-
-     <!-- Image Grid Layout -->
-<div class="col-lg-6 d-none d-lg-block">
-  <div class="custom-image-grid position-relative" data-aos="fade-left">
-    <img src="assets/images/a1.png" alt="" class="img-main img-fluid rounded shadow">
-    <img src="assets/images/a3.png" alt="" class="img-overlay img-fluid rounded shadow">
-    <div class="badge-circle">
-      20+<br><small>Years of experience</small>
-    </div>
-  </div>
-</div>
-
-
-    </div>
-  </div>
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<!-- WHY CHOOSE US SECTION -->
-<!-- From Uiverse.io by themrsami --> 
-
-
- <section class="why_choose_us_section py-5 bg-gradient" style="background: linear-gradient(135deg, #f9f9f9, #e6f0ff);">
-
-  <div class="container"  style="margin-top: 40px;">
-    <div class="text-center mb-5" data-aos="fade-up">
-     <h2 class="fw-bold text-dark fs-1"><b>Why Choose Us</b></h2>
-<p class="text-muted mt-3 fs-6 mx-auto w-100 w-md-75">
-  Our skilled professionals, using the latest design technology and fabrication techniques, produce quality signage to meet our clients’ individual and very unique needs.
-</p>
-
-    </div>
-
-    <div class="row g-4">
-      <!-- Item 1 -->
-      <div class="col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="card h-100 border-0 shadow-sm rounded-4 transition">
-          <div class="card-body text-center">
-            <div class="mb-3 text-primary fs-2">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h5 class="fw-semibold">Expert Craftsmanship</h5>
-            <p class="text-muted small mt-3">
-              Our skilled professionals, using the latest design technology and fabrication techniques, produce quality signage to meet our clients’ individual and very unique needs.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-     <div class="col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="card h-100 border-0 shadow-sm rounded-4 transition">
-          <div class="card-body text-center">
-            <div class="mb-3 text-success fs-2">
-              <i class="fas fa-users-cog"></i>
-            </div>
-            <h5 class="fw-semibold">Strong Support Team</h5>
-            <p class="text-muted small mt-3">
-              Our 60-member in-house team ensures seamless service from printing to installation—on time, every time.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-    <div class="col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="card h-100 border-0 shadow-sm rounded-4 transition">
-          <div class="card-body text-center">
-            <div class="mb-3 text-warning fs-2">
-              <i class="fas fa-bullhorn"></i>
-            </div>
-            <h5 class="fw-semibold">Advertising Experts</h5>
-            <p class="text-muted small mt-3">
-              We have expertise in outdoor as well as indoor advertising and have had the privilege of working with leading ad agencies, corporate clients, telecom giants, and the apparel industry.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-    <div class="col-sm-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="card h-100 border-0 shadow-sm rounded-4 transition">
-          <div class="card-body text-center">
-            <div class="mb-3 text-danger fs-2">
-              <i class="fas fa-layer-group"></i>
-            </div>
-            <h5 class="fw-semibold">Versatile Product</h5>
-            <p class="text-muted small mt-3">
-              Q-XPERT can be used in airports, cinemas, hospitals, hotels, banks, malls, metro stations, and more.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- From Uiverse.io by themrsami --> 
-
-
-
-
-<!-- END SECTION ABOUT US --> 
-
-
-
-<!-- START SECTION CALL TO ACTION -->
-<section class="small_pt">
-	<div class="container">
-    	<div class="row">
+        <div class="row mb-4">
         	<div class="col-md-12">
-            	<div class="cta_section_small background_bg blue_overlay_bg position-relative fixed_bg animation" data-animation="fadeInUp" data-animation-delay="0.2s" data-img-src="https://bestwebcreator.com/anger/demo/assets/images/cta_bg.jpg">
-                	<div class="row align-items-center">
-                    	<div class="col-md-8 text_white">
-                            <h2 class="">We always stay with our clients.</h2>
-                            <p class="mb-md-0">If you have any additional questions or require further clarification, please, do not hesitate to reach us.</p>
-                        </div>
-                        <div class="col-md-4 text-md-right">	
-                            <a href="contact.html" class="btn btn-outline-white">Contact Us</a>
-                        </div>
-                    </div>
+            	<div class="heading_s3 text-center mt-5">
+            		<h2>Our Testimonials</h2>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- END SECTION CALL TO ACTION -->
+        <div class="row mb-md-5 mb-3">
+            <div class="col-md-12">
+               <div class="testimonial_slider testimonial_style1 carousel_slide3 owl-carousel owl-theme"
+     data-margin="30" data-loop="true" data-center="true" data-autoplay="true"
+     data-responsive='{"0":{"items":1},"600":{"items":1},"1000":{"items":3}}'>
 
-<!-- START SECTION CLIENT LOGO -->
-<section class="small_pt small_pb light_gray_bg">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-            	<div class="cl_logo_slider owl-carousel owl-theme" data-margin="30" data-loop="true" data-autoplay="true" data-dots="false" data-autoplay-timeout="2000">
-                	<div class="item">
-                    	<a href="#"><img src="https://bestwebcreator.com/anger/demo/assets/images/cl_logo1.png" alt="cl_logo1"/></a>
+                    <div class="item">
+                <div class="testimonial_box">
+                    <div class="testimonial_img">
+                        <img class="rounded-circle m-auto" src="assets/images/fx.jpeg" alt="user"/>
+                    </div>
+                    <div class="testi_meta">
+                        <h6>FIX DERMA</h6>
+                        <span>MOHSIN KHAN</span>
+                        <p>"SK Retail's attention to detail and commitment to timely delivery exceeded our expectations. The quality of branding materials and installation was top-notch. Highly recommended for brands looking for professional signage solutions!."</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="item">
+                        <div class="testimonial_box">
+                            <div class="testimonial_img">
+                                <img class="rounded-circle m-auto" src="assets/images/uc.jpg" alt="user"/>
+                            </div>
+                            <div class="testi_meta">
+                                <h6>UNCOMMON</h6>
+                                <span>PRASHANT SINGH</span>
+                                <p>“From concept to execution, the SK Retail team was extremely responsive and creative. They understood our brand’s unique needs and translated them beautifully into visual assets. Great experience working with them!”</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="item">
-                    	<a href="#"><img src="https://bestwebcreator.com/anger/demo/assets/images/cl_logo2.png" alt="cl_logo2"/></a>
+                        <div class="testimonial_box">
+                            <div class="testimonial_img">
+                                <img class="rounded-circle m-auto" src="assets/images/sb.jpeg" alt="user"/>
+                            </div>
+                            <div class="testi_meta">
+                                <h6>SWISS BEAUTY</h6>
+                                <span>MOHD MAQSOOD</span>
+                                <p>“SK Retail delivered stunning displays and installations that aligned perfectly with our premium brand identity. Their work speaks volumes of their expertise in retail branding and execution.”</p>
+                            </div>
+                        </div>
+                    </div>
+					  <div class="item">
+                        <div class="testimonial_box">
+                            <div class="testimonial_img">
+                                <img class="rounded-circle m-auto" src="assets/images/flamingo.png" alt="user"/>
+                            </div>
+                            <div class="testi_meta">
+                                <h6>FLEMINGO DUTY FREE SHOP</h6>
+                                <span>PRASHANT BHOGE</span>
+                                <p>“SK Retail helped elevate the aesthetics and professionalism of our store environment. Their creativity and commitment to delivering outstanding visual solutions were clearly reflected in the final outcome.”</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="item">
-                    	<a href="#"><img src="https://bestwebcreator.com/anger/demo/assets/images/cl_logo3.png" alt="cl_logo3"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="https://bestwebcreator.com/anger/demo/assets/images/cl_logo4.png" alt="cl_logo4"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="https://bestwebcreator.com/anger/demo/assets/images/cl_logo5.png" alt="cl_logo5"/></a>
-                    </div>
-                    <div class="item">
-                    	<a href="#"><img src="https://bestwebcreator.com/anger/demo/assets/images/cl_logo6.png" alt="cl_logo6"/></a>
+                        <div class="testimonial_box">
+                            <div class="testimonial_img">
+                                <img class="rounded-circle m-auto" src="assets/images/marsCos.jpg" alt="user"/>
+                            </div>
+                            <div class="testi_meta">
+                                <h6>MARS COSMETIC</h6>
+                                <span>DINANSHU BHASIN</span>
+                                <p>“Working with SK Retail has been seamless and rewarding. They offered us cost-effective yet high-quality branding services. Their team is skilled, courteous, and punctual — exactly what any brand looks for.”</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- START SECTION CLIENT LOGO -->
+       
+<!-- START FOOTER SECTION --> 
 <!-- START FOOTER SECTION --> 
 <footer class="pattern_top footer_dark">
     <div class="top_footer">
@@ -1136,8 +643,7 @@ button:hover .button-text {
             </div>
             <div class="row">
                 <!-- Contact Info -->
-               <div class="col-lg-3 col-md-6 mb-4 mb-md-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
 				 <h6 class="widget_title">Connect With Us</h6>
                     <ul class="contact_info contact_info_light" style="list-style: none; padding-left: 0;">
                         <li>
@@ -1157,8 +663,7 @@ button:hover .button-text {
                 </div>
 
                 <!-- Useful Links -->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
                     <h6 class="widget_title">USEFUL LINKS</h6>
                     <ul class="list_none widget_links">
                         <li><a href="about.html">About Us</a></li>
@@ -1169,8 +674,7 @@ button:hover .button-text {
                 </div>
 
                 <!-- Social + Extra Info -->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-
+                <div class="col-lg-3 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                     <h6 class="widget_title">Follow Us</h6>
                     <ul class="list_none footer_social">
                         <li><a href="#"><i class="ion-social-facebook"></i></a></li>                    
@@ -1186,8 +690,7 @@ button:hover .button-text {
                 </div>
 
                 <!-- Google Map + Trust Badges -->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-
+                <div class="col-lg-4 col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
                     <h6 class="widget_title">Find Us</h6>
                     <div style="border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3506.9322015046164!2d77.18262097549524!3d28.481588375747446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI4JzUzLjciTiA3N8KwMTEnMDYuNyJF!5e0!3m2!1sen!2sin!4v1749030040393!5m2!1sen!2sin" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -1208,8 +711,8 @@ button:hover .button-text {
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <p class="copyright m-md-0 text-center text-md-left">
-                        <script>document.write(new Date().getFullYear());</script> All Rights Reserved by Sk Retail.
-                   </p>
+                       <script>document.write(new Date().getFullYear());</script> All Rights Reserved by Sk Retail.
+                    </p>
                 </div>
                 <div class="col-md-6">
                     <div class="row justify-content-center">
@@ -1223,3 +726,36 @@ button:hover .button-text {
         </div>
     </div>
 </footer>
+<!-- END FOOTER SECTION --> 
+
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script> 
+<!-- jquery-ui --> 
+<script src="assets/js/jquery-ui.js"></script>
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- elevatezoom js -->
+<script src='assets/js/jquery.elevatezoom.js'></script> 
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

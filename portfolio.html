@@ -4,12 +4,8 @@
 <!-- Meta -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Anil z" name="author">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Anger is a creative business, corporate, portfolio and clean HTML template, Based on Bootstrap, Anger is a multipurpose HTML template with unique home page demo">
-<meta name="keywords" content="creative, fullscreen, business, photography, portfolio, one page, bootstrap responsive, start-up, ui/ux, html template, css3, studio, branding, creative design, multipurpose, multi-purpose, parallax, personal, masonry, grid, coming soon, carousel, agency">
 
-<!-- SITE TITLE -->
 <title>SK Retail</title>
 <!-- Favicon Icon -->
 <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
@@ -17,6 +13,8 @@
 <link rel="stylesheet" href="assets/css/animate.css">	
 <!-- Latest Bootstrap min CSS -->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -33,235 +31,1004 @@
 <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
 <!-- Magnific Popup CSS -->
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css">
 <!-- Style CSS -->
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 <link rel="stylesheet" id="layoutstyle" href="assets/color/theme.css">
-<style>
-.crt-logo{
-    display:none !important;
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons@0.1.2/css/themify-icons.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<Style>
+
+/* ========== ✅ GENERAL STYLES ========== */
+.navbar {
+  background-color: white !important;
+  padding: 10px 0;
+  transition: background-color 0.8s ease;
 }
+
+.navbar-brand img {
+  max-height: 90px;
+}
+
+/* Desktop nav links */
+.navbar .nav-link {
+  color: black !important;
+  padding: 10px 15px;
+  margin: 0 12px;
+  position: relative;
+  font-weight: 500;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 5px;
+  height: 2px;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  opacity: 1;
+  left: 10%;
+  right: 10%;
+}
+
+/* Brochure Button General */
+.brochure-btn {
+  font-size: 1rem;
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  margin-left: 30px;
+  margin-top: 5px;
+  position: relative;
+  top: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.brochure-btn:hover {
+  background-color: blue;
+  color: #000 !important;
+  text-decoration: none;
+}
+
+/* ========== ✅ MOBILE NAVIGATION ========== */
+@media (max-width: 991px) {
+ .navbar-collapse {
+        position: fixed;
+        top: -10px;
+        right: 0 !important;
+        left: auto !important;
+        width: 75%;
+        max-width: 280px;
+        height: 110vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 80px 20px 20px;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+        z-index: 1050;
+        border-radius: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+ .navbar-collapse.show {
+    transform: translateX(0);      /* ✅ Slide in from right */
+  }
+  .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    background: transparent !important;
+    width: 100%;
+  }
+
+  .navbar-collapse .nav-item {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white !important;
+    background: transparent;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-collapse .nav-link:hover {
+    color: #00e6e6 !important;
+  }
+
+  .navbar-collapse .brochure-btn {
+    width: 90%;
+    max-width: 240px;
+    margin: 10px;
+    background-color: #17a2b8;
+    color: black;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	position: relative;
+        top: -90px;
+  }
+
+  .navbar-collapse .brochure-btn:hover {
+    background-color: #00e6e6;
+    color: black !important;
+  }
+
+  .mobile-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
+    display: block;
+  }
+
+  .mobile-close-btn .close-nav {
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .navbar-toggler {
+    z-index: 1101;
+  }
+
+  .navbar-collapse.show ~ .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-toggler.collapsed {
+    display: block;
+  }
+
+  .navbar-toggler:not(.collapsed) {
+    display: none;
+  }
+}
+
+/* ✖ Hide close button on desktop */
+@media (min-width: 992px) {
+  .mobile-close-btn {
+    display: none;
+  }
+}
+
+/* Slide animation */
+@keyframes slideDownDark {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Counter Section Styling */
+.counter_wrap {
+  background-color: #111;
+  padding: 60px 0;
+}
+
+.box_counter {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.box_counter:hover {
+  transform: translateY(-10px);
+  background: #000;
+  border-color: #555;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.box_counter i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.box_counter:hover i {
+  color: #00ffcc;
+}
+
+.counter_text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.box_counter p {
+  color: #bbb;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.contact_info li {
+  margin-bottom: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.contact_info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact_info a:hover {
+  text-decoration: underline;
+}
+.brand-logos-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+* 🖱️ Button Styling */
+.btn-dark {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  background-color: #00adef ;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #32346d;
+  color:white !important;
+  transform: scale(1.05);
+}
+.contact_info li {
+  margin-bottom: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.contact_info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact_info a:hover {
+  text-decoration: underline;
+}
+.brand-logos-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+.portfolio_item img {
+    width: 100%;
+    height: 200px; /* You can adjust this height as needed */
+    object-fit: cover; /* Ensures the image fills its box without distortion */
+    display: block;
+  }
+
+  .portfolio_container {
+    overflow: hidden;
+  }
+
+  .portfolio-item {
+    box-sizing: border-box;
+    padding: 10px;
+  }
+/* Container should wrap neatly and keep in one line, even if many buttons */
+.portfolio_filter {
+  display: flex;
+  flex-wrap: nowrap;          /* keep in single line, no wrap */
+  justify-content: center;    /* center align horizontally */
+  overflow-x: auto;           /* allow horizontal scroll if needed */
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: none;      /* hide scrollbar in Firefox */
+}
+.portfolio_filter::-webkit-scrollbar {
+  display: none;             /* hide scrollbar in Chrome, Safari */
+}
+
+/* Style each button equally */
+.portfolio_filter li {
+  flex: 0 0 auto;            /* prevent shrinking, keep width */
+  margin: 0 5px;
+}
+
+.portfolio_filter li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;                /* fixed width */
+  height: 40px;                /* fixed height */
+  border-radius: 50px;         /* oval shape */
+  background: #fff;
+  border: 2px solid #007bff;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  white-space: nowrap;         /* prevent text wrapping */
+}
+
+.portfolio_filter li a:hover,
+.portfolio_filter li a.current {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Portfolio gallery images me border add kare */
+.portfolio_container .portfolio-item img {
+  border: 3px solid #ddd;           /* light gray border */
+  border-radius: 8px;               /* thoda curve */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* halka shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: thoda zoom aur shadow */
+.portfolio_container .portfolio-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+#loadMoreBtn {
+  border-radius: 30px;              /* oval shape / rounded corners */
+  padding: 10px 25px;               /* thoda spacing */
+  font-weight: 600;
+  background-color: #007bff;        /* apni theme ke hisab se */
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+  background-color: #0056b3;        /* darker shade on hover */
+  transform: scale(1.05);
+}
+
+
+
+@media (max-width: 767px) {
+  #portfolioContainer .portfolio-item {
+    width: 50% !important;
+  }
+}
+
+
+.footer_dark .widget_title {
+  color: #17a2b8; /* bright blue, you can replace with your preferred shade */
+}
+
+/* ✅ Desktop adjustments for small desktop screens */
+@media (max-width: 1200px) and (min-width: 992px) {
+  .navbar .nav-link {
+    margin: 0 8px;   /* smaller gaps */
+    font-size: 0.9rem; /* slightly smaller text */
+  }
+
+  .brochure-btn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-left: 10px;
+  }
+
+  .navbar-brand img {
+    max-height: 50px; /* smaller logo */
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 992px) {
+  .navbar .nav-link {
+    margin: 0 6px;
+    font-size: 0.85rem;
+  }
+
+  .brochure-btn {
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    margin-left: 8px;
+  }
+
+  .navbar-brand img {
+    max-height: 45px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-height: 70px;     /* slightly bigger than 40px */
+  }
+
+  .navbar-toggler {
+    font-size: 1.4rem;    /* slightly bigger toggle icon */
+    padding: 6px 8px;
+  }
+
+  .navbar {
+    padding: 8px 0;       /* balanced vertical space */
+  }
+}
+@media (max-width: 767px) {
+  .breadcrumb_section {
+    padding-top: 60px;   /* was 100px */
+    padding-bottom: 60px; 
+  }
+
+  .breadcrumb_section .page-title h1 {
+    font-size: 26px;  /* optional: keep slightly larger text */
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar .d-flex .btn,
+  .navbar .d-flex .navbar-toggler {
+    margin: 4px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-only {
+    display: inline-block;
+    background: linear-gradient(90deg,#0e93d8,#32346d);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+}
+
+/* Desktop ya bade screens pe hide karne ke liye */
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+
+/* Default: hide */
+.mobile-only {
+  display: none;
+}
+
 </style>
-
-
 </head>
 
 <body>
+<!-- Header -->
+<header class="header_wrap dark_skin hover_menu_style3"style="position: fixed; top: 0; left: 0; right: 0; z-index: 1030;" >
 
-<!-- LOADER -->
-<div class="preloader">
-    <div class="loader_grid">
-      <div class="loader_box loader_box1"></div>
-      <div class="loader_box loader_box2"></div>
-      <div class="loader_box loader_box3"></div>
-      <div class="loader_box loader_box4"></div>
-      <div class="loader_box loader_box5"></div>
-      <div class="loader_box loader_box6"></div>
-      <div class="loader_box loader_box7"></div>
-      <div class="loader_box loader_box8"></div>
-      <div class="loader_box loader_box9"></div>
-    </div>
-</div>
-<!-- END LOADER --> 
-
-<!-- START HEADER -->
-<header class="header_wrap dark_skin hover_menu_style3">
-  <div class="top-header bg-dark light_skin d-none d-md-block">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <ul class="contact_detail list_none text-center text-md-left">
-                        <li><i class="ti-mobile"></i>098102 37502</li>
-                        <li><i class="ti-location-pin"></i>Delhi, India</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list_none social_icons text-center border_social rounded_social social_white  text-md-right mt-2 mt-md-0">
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <!--<li><a href="#"><i class="ion-social-twitter"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-googleplus"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>-->
-                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+  <!-- Top Header -->
+  <div class="top-header text-white light_skin d-none d-md-block py-2" style="background-color:black;">
+    <div class="container-fluid px-0">
+      <div class="row align-items-center mx-0">
+        <div class="col-md-8 px-3">
+          <ul class="contact_detail list_none mb-0" style="text-align: left;">
+            <li><i class="ti-mobile"></i> 098102 37502</li>
+            <li><i class="ti-location-pin"></i> Delhi, India</li>
+          </ul>
         </div>
-    </div>
-  <div class="container">
-      
-    <nav class="navbar navbar-expand-lg"> 
-    	<a class="navbar-brand" href="index.html">
-			<img class="logo_light" src="assets/images/sklogo.png" style="max-width: 12vh;" alt="logo" />
-            <img class="logo_dark" src="assets/images/sklogo.png" style="max-width: 12vh;" alt="logo" />
-            <img class="logo_default" src="assets/images/sklogo.png" style="max-width: 12vh;" alt="logo" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
-      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                
-                
-                <li >
-                    <a  class="nav-link " href="index.html">Home</a>
-                           
-                </li>
-                <li>
-                    <a class="nav-link" href="about.html" >About Us</a>
-                        
-                </li>
-                 <li>
-                    <a class="nav-link" href="services.html" >Our Services</a>
-                        
-                </li>
-                                 <li>
-                    <a class="nav-link" href="portfolio.html" >Our Work</a>
-                        
-                </li>
-                
-                                 <li>
-                    <a class="nav-link" href="Contact.html" >Contact</a>
-                        
-                </li>
-                
-                
-            </ul>
+        <div class="col-md-4 px-3">
+          <ul class="list_none social_icons text-center border_social rounded_social social_white text-md-right mb-0">
+            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/skretail19900/"><i class="ion-social-instagram-outline"></i></a></li>
+          </ul>
         </div>
-        
-    </nav>
+      </div>
+    </div>
   </div>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/images/sklogo.png" alt="logo" />
+    </a>
+
+    <!-- Mobile download button -->
+ <a class="contact-btn mobile-only d-block d-md-none" href="assets/skr_brochure.pdf" download>
+  <i class="fas fa-download me-1"></i> Download Brochure
+</a>
+
+    <!-- Hamburger toggler -->
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ion-android-menu text-dark_skin"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <div class="mobile-close-btn">
+        <button class="close-nav" onclick="closeNavbar()">✖</button>
+      </div>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Our Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Our Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Desktop download button -->
+      <a class="btn btn-dark text-white btn-sm px-4 py-2 rounded-pill shadow brochure-btn d-none d-lg-block"
+         href="assets/skr_brochure.pdf" download>
+        <i class="fas fa-download me-2"></i>Download Brochure
+      </a>
+    </div>
+  </div>
+</nav>
+
 </header>
-<!-- START HEADER --> 
-
-
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const headerWrap = document.querySelector("header.header_wrap");
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelectorAll('.navbar .nav-link');
+  const currentUrl = window.location.href;
+  
+  // Fix body padding for fixed header
+  if (headerWrap) {
+    document.body.style.paddingTop = headerWrap.offsetHeight + "px";
+  }
+  
+  // Single function to close navbar
+  function closeNavbar() {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const toggler = document.querySelector('.navbar-toggler');
+    
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+      });
+      bootstrapCollapse.hide();
+      
+      // Reset toggler state
+      if (toggler) {
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded', 'false');
+      }
+    }
+  }
+  
+  // Make closeNavbar available globally for onclick handler
+  window.closeNavbar = closeNavbar;
+  
+  // Close mobile menu on nav-link click
+  document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 991) {
+        closeNavbar();
+      }
+    });
+  });
+  
+  // Close navbar when clicking outside on mobile
+  document.addEventListener('click', function(event) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const toggler = document.querySelector('.navbar-toggler');
+    
+    if (window.innerWidth <= 991 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+      if (!navbarCollapse.contains(event.target) && !toggler.contains(event.target)) {
+        closeNavbar();
+      }
+    }
+  });
+});
+</script>
+<!-- Header End -->
 <!-- START SECTION BANNER -->
-<section class="page-title-light breadcrumb_section background_bg blue_overlay_bg" data-img-src="/assets/images/20200830_010603-min.jpg">
+<section class="page-title-light breadcrumb_section background_bg blue_overlay_bg" data-img-src="assets/images/b1.png">
 	<div class="container">
     	<div class="row">
         	<div class="col-sm-12 text-center">
             	<div class="page-title">
-            		<h1>Portfolio </h1>
+            		<h1>Portfolio</h1>
                 </div>
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Portfolio</a></li>
-                                      </ol>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                  </ol>
                 </nav>
             </div>
         </div>
     </div>
 </section>
 <!-- END SECTION BANNER --> 
+
 <!-- START SECTION PORTFOLIO -->
 <section>
-    <div class="container">
-    	<div class="row justify-content-center">
-        	<div class="col-lg-6 col-md-9 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                <div class="heading_s1 text-center">
-                    <h2>Our Latest works</h2>
-                </div>
-                <!--<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>-->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="cleafix small_divider"></div>
-            </div>
-        </div>
-        <!--<div class="row mb-3 mb-sm-5">-->
-        <!--    <div class="col-md-12 text-center">-->
-        <!--        <ul class="list_none portfolio_filter filter_tab3 animation" data-animation="fadeInUp" data-animation-delay="0.3s">-->
-        <!--            <li><a href="#" class="current" data-filter="*">all</a></li>-->
-        <!--            <li><a href="#" data-filter=".brands">Brands</a></li>-->
-        <!--            <li><a href="#" data-filter=".design">Design</a></li>-->
-        <!--            <li><a href="#" data-filter=".web">Web</a></li>-->
-        <!--            <li><a href="#" data-filter=".adv">Advertising</a></li>-->
-        <!--        </ul>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="portfolio_container gutter_small work_col4 portfolio_gallery portfolio_style2 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
-                	 <!-- Place <div> tag where you want the feed to appear -->
-<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
-/* curator-feed-default-feed-layout */
-(function(){
-var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-i.src="https://cdn.curator.io/published/aca590c6-242b-4b43-a35b-988bbdfe2d7f.js";
-e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-})();
+  <div class="container">
+    <!-- FILTER BUTTONS -->
+  <!-- FILTER BUTTONS -->
+<div class="row mb-3 mb-sm-5">
+  <div class="col-md-12 text-center">
+
+    <!-- Dropdown visible only on mobile -->
+	<!-- FILTER HEADING VISIBLE ONLY ON MOBILE -->
+<!-- Filter heading only on mobile -->
+<h5 class="text-center text-primary d-block d-md-none mb-2">Filter by Category</h5>
+
+<select id="mobileFilter"
+        class="form-select d-block d-lg-none mb-3 rounded-pill fw-semibold"
+        style="
+          background-color: white;
+          color: black;
+          width: 85%;
+          max-width: 300px;
+          margin: 0 auto;
+          border: 2px solid #0d6efd;
+          font-size: 1.1rem;
+          height: 48px;
+          padding-left: 16px;
+        ">
+  <option value="*">All</option>
+  <option value=".BACKWALL">Backwall</option>
+  <option value=".GANDOLA">Gandola</option>
+  <option value=".KIOSK">Kiosk</option>
+  <option value=".SETUP">Setup</option>
+  <option value=".STORE">Store</option>
+  <option value=".CDU">Cdu</option>
+  <option value=".STAIR_CDU">Stair-Cdu</option>
+  <option value=".FRONT_COUNTER">Front-Counter</option>
+  <option value=".FSU">Fsu</option>
+</select>
+
+
+
+
+
+  <ul class="list_none portfolio_filter filter_tab2 d-none d-lg-flex justify-content-center flex-nowrap overflow-auto gap-2">
+  <li><a href="#" class="current" data-filter="*">All</a></li>
+  <li><a href="#" data-filter=".BACKWALL">Backwall</a></li>
+  <li><a href="#" data-filter=".GANDOLA">Gandola</a></li>
+  <li><a href="#" data-filter=".KIOSK">Kiosk</a></li>
+  <li><a href="#" data-filter=".SETUP">Setup</a></li>
+  <li><a href="#" data-filter=".STORE">Store</a></li>
+  <li><a href="#" data-filter=".CDU">Cdu</a></li>
+  <li><a href="#" data-filter=".STAIR_CDU">Stair-Cdu</a></li>
+  <li><a href="#" data-filter=".FRONT_COUNTER">Front-Counter</a></li>
+  <li><a href="#" data-filter=".FSU">Fsu</a></li>
+</ul>
+
+
+  </div>
+</div>
+<script>
+  document.getElementById('mobileFilter').addEventListener('change', function() {
+    var filterValue = this.value;
+    // trigger the Isotope filter
+    $('.portfolio_container').isotope({ filter: filterValue });
+  });
 </script>
 
-                        
-                </ul>
-            </div>
+
+
+    <!-- IMAGE GALLERY -->
+    <div class="row">
+      <div class="col-md-12">
+        <ul id="portfolioContainer" class="portfolio_container gutter_small work_col3 portfolio_gallery portfolio_style2">
+          <li class="grid-sizer"></li>
+        </ul>
+        <div class="text-center mt-4">
+         <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+
         </div>
+      </div>
     </div>
+  </div>
 </section>
-<!-- END SECTION PORTFOLIO -->
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+
+<!-- JS Section -->
+<script src="https://cdn.jsdelivr.net/npm/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+// ✅ Final Corrected JS Code with Dynamic Image Load, Filter, and Load More Support
+
+// 1. Category Config
+const categories = [
+  { name: "BACKWALL", path: "assets/BACKWALL/", count: 152 },
+  { name: "GANDOLA", path: "assets/GANDOLA/", count: 8 },
+  { name: "KIOSK", path: "assets/KIOSK/", count: 84 },
+  { name: "SETUP", path: "assets/SETUP/", count: 20 },
+  { name: "STORE", path: "assets/STORE/", count: 31 },
+  { name: "CDU", path: "assets/CDU/", count: 14 },
+  { name: "STAIR_CDU", path: "assets/STAIR_CDU/", count: 9 },
+  { name: "FRONT_COUNTER", path: "assets/FRONT_COUNTER/", count: 34 },
+  { name: "FSU", path: "assets/FSU/", count: 17 }
+];
+
+// 2. State Trackers
+const container = document.getElementById("portfolioContainer");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const imagesPerLoad = 20;
+let allImages = [];
+let visibleImages = []; // Track currently visible images
+let currentIndex = 0;
+let activeFilter = "*"; // Track current filter
+  let iso;
+
+// 3. Utility to Create One Image Element
+function createImageElement(category, index) {
+  const li = document.createElement("li");
+  li.className = `portfolio-item ${category.name}`;
+  li.style.display = 'none'; // Initially hidden
+  li.innerHTML = `
+    <div class="portfolio_item">
+      <a href="${category.path}${index}.jpg" class="image_link">
+        <img src="${category.path}${index}.jpg" alt="${category.name} Image ${index}" style="height:250px; width:100%; object-fit:cover;">
+      </a>
+      <div class="portfolio_content">
+        <div class="link_container">
+          <a href="${category.path}${index}.jpg" class="image_popup"><i class="ion-image"></i></a>
+        </div>
+      </div>
+    </div>
+  `;
+  return li;
+}
+
+
+        // 4. Generate All Images (but don't add to DOM yet)
+        function generateAllImages() {
+            allImages = [];
+            categories.forEach(category => {
+                for (let i = 1; i <= category.count; i++) {
+                    const imageElement = createImageElement(category, i);
+                    allImages.push({
+                        element: imageElement,
+                        category: category.name
+                    });
+                }
+            });
+        }
+  // 5. Get images for current filter
+        function getImagesForFilter(filter) {
+            if (filter === "*") {
+                return allImages;
+            }
+            const categoryName = filter.replace(".", "");
+            return allImages.filter(img => img.category === categoryName);
+        }
+		   // 6. Load images based on current filter
+ function loadImagesForCurrentFilter() {
+            const filteredImages = getImagesForFilter(activeFilter);
+            const imagesToShow = filteredImages.slice(0, currentIndex + imagesPerLoad);
+            
+            // Clear container (except grid-sizer)
+            const gridSizer = container.querySelector('.grid-sizer');
+            container.innerHTML = '';
+            container.appendChild(gridSizer);
+            
+            // Add images to DOM
+            imagesToShow.forEach(imgObj => {
+                const clonedElement = imgObj.element.cloneNode(true);
+                clonedElement.style.display = 'block';
+                container.appendChild(clonedElement);
+            });
+            
+            visibleImages = imagesToShow;
+            currentIndex = Math.min(currentIndex + imagesPerLoad, filteredImages.length);
+            
+            // Update load more button
+            if (currentIndex >= filteredImages.length) {
+                loadMoreBtn.style.display = "none";
+            } else {
+                loadMoreBtn.style.display = "block";
+            }
+            
+            // Reinitialize Isotope
+            if (iso) {
+                iso.destroy();
+            }
+            
+            imagesLoaded(container, () => {
+                iso = new Isotope(container, {
+                    itemSelector: ".portfolio-item",
+                    layoutMode: "fitRows"
+                });
+                
+                // Reinitialize Magnific Popup
+                $('.portfolio_container').magnificPopup({
+                    delegate: 'a.image_popup',
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    }
+                });
+            });
+        }
+
+        // 7. Initialize on page load
+        window.onload = () => {
+            generateAllImages();
+            currentIndex = 0;
+            loadImagesForCurrentFilter();
+        };
+
+        // 8. Filter Handling
+        const filters = document.querySelectorAll(".portfolio_filter a");
+        filters.forEach(btn => {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                
+                // Update active filter button
+                filters.forEach(el => el.classList.remove("current"));
+                this.classList.add("current");
+                
+                // Set new filter and reset index
+                activeFilter = this.getAttribute("data-filter");
+                currentIndex = 0;
+                
+                // Load images for new filter
+                loadImagesForCurrentFilter();
+            });
+        });
+// Mobile dropdown filter
+const mobileFilter = document.getElementById("mobileFilter");
+mobileFilter.addEventListener("change", function() {
+    activeFilter = this.value;
+    currentIndex = 0;
+    loadImagesForCurrentFilter();
+});
+
+
+        // 9. Load More Button Event
+        loadMoreBtn.addEventListener("click", () => {
+            loadImagesForCurrentFilter();
+        });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.portfolio_container').magnificPopup({
+      delegate: 'a.image_popup',
+      type: 'image',
+      gallery: {
+        enabled: true
+      }
+    });
+  });
+</script>
+
 
 <!-- START FOOTER SECTION --> 
+<!-- START FOOTER SECTION --> 
 <footer class="pattern_top footer_dark">
-	<div class="top_footer">
+    <div class="top_footer">
         <div class="container">
-        	<div class="row">
-            	<div class="col-md-12">
-                	<div class="medium_divider"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="medium_divider"></div>
                 </div>
             </div>
             <div class="row">
+                <!-- Contact Info -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                	<!--<div class="footer_logo">-->
-                 <!--   	<a href="index-2.html"><img alt="logo" src="assets/images/sklogo_white.jpeg" style="max-width: 12vh;"></a>-->
-                 <!--   </div>-->
-                 <!--   <p>Phasellus blandit massa enim. elit id varius nunc. Lorem ipsum dolor sit amet, consectetur industry.</p>-->
-                    <ul class="contact_info contact_info_light list_none">
+				 <h6 class="widget_title">Connect With Us</h6>
+                    <ul class="contact_info contact_info_light" style="list-style: none; padding-left: 0;">
                         <li>
-                            <span class="ti-location-pin"></span>
-                            <address>Delhi, India</address>
+                            <span class="ti-location-pin" style="margin-right: 8px;"></span>
+                            <span>Delhi, India</span>
                         </li>
                         <li>
-                            <span class="ti-email"></span>
-                            <a href="mailto:info@skretail.in">info@skretail.in</a>
+                            <span class="ti-email" style="margin-right: 8px;"></span>
+                            <a href="mailto:info@skretail.in" style="color: white;">info@skretail.in</a>
                         </li>
                         <li>
-                            <span class="ti-mobile"></span>
-                            <a href="tel:+919810237502">+91 98102 37502</a>
+                            <span class="ti-mobile" style="margin-right: 8px;"></span>
+							 <a href="tel:+91 98102 37502" style="color: white;">+91 98102 37502</a>
                         </li>
                     </ul>
                 </div>
+
+                <!-- Useful Links -->
                 <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
-                	<h6 class="widget_title">USEFUL LINKS</h6>
+                    <h6 class="widget_title">USEFUL LINKS</h6>
                     <ul class="list_none widget_links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="portfolio.html">Our Work</a></li>
-                        <li><a href="services.html">Our services</a></li>
-                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="service.html">Our Services</a></li>                       
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
-                    
+
+                <!-- Social + Extra Info -->
+                <div class="col-lg-3 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
                     <h6 class="widget_title">Follow Us</h6>
                     <ul class="list_none footer_social">
-                    	<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <!--<li><a href="#"><i class="ion-social-twitter"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-googleplus"></i></a></li>-->
-                        <!--<li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>-->
-                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>                    
+                        <li><a href="https://www.instagram.com/skretail19900/"><i class="ion-social-instagram-outline"></i></a></li>
                     </ul>
+
+                    <h6 class="widget_title mt-3">Working Hours</h6>
+                    <p style="color: white; font-size: 14px;">
+                        Mon – Fri: 9:00 AM – 6:00 PM<br>
+                        Sat: 10:00 AM – 4:00 PM<br>
+                        Sun: Closed
+                    </p>
+                </div>
+
+                <!-- Google Map + Trust Badges -->
+                <div class="col-lg-4 col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+                    <h6 class="widget_title">Find Us</h6>
+                    <div style="border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3506.9322015046164!2d77.18262097549524!3d28.481588375747446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI4JzUzLjciTiA3N8KwMTEnMDYuNyJF!5e0!3m2!1sen!2sin!4v1749030040393!5m2!1sen!2sin" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>		
+					
+                    <h6 class="widget_title">Our Trusted Partners</h6>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <img src="assets/images/indiamart.jpg" alt="IndiaMART" style="height: 40px; margin-right: 10px;">
+                        <img src="assets/images/startup-india.png" alt="Startup India" style="height: 40px; margin-right: 10px;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="bottom_footer bg-dark">
-    	<div class="container">
-        	<div class="row align-items-center">
-            	<div class="col-md-6">
-                	<p class="copyright m-md-0 text-center text-md-left">&copy; 2018 All Rights Reserved by Sk Retail.</p>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright m-md-0 text-center text-md-left">
+                       <script>document.write(new Date().getFullYear());</script> All Rights Reserved by Sk Retail.
+                    </p>
                 </div>
                 <div class="col-md-6">
-                	 <div class="row justify-content-center"><p style="display: inline-block;">Site Maintaned &amp; developed by&nbsp;&nbsp;</p>
-<a href="https://svinfotechsoftwaresolutions.com/" target="_blank" title="Sv infotech Software solutions Dehradun" style="color: white;width: 15%;"> <img class="mobologo" src="assets/images/small_SV_logo.png" alt="Sv infotech Software solutions Dehradun"></a></div>
-                
+                    <div class="row justify-content-center">
+                        <p style="display: inline-block;">Site Maintained &amp; Developed by&nbsp;&nbsp;</p>
+                        <a href="https://svinfotechsoftwaresolutions.com/" target="_blank" title="Sv infotech Software solutions Dehradun" style="color: white;width: 15%;">
+                            <img class="mobologo" src="assets/images/small_SV_logo.png" alt="Sv infotech Software solutions Dehradun">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
